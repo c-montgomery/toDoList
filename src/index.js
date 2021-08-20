@@ -26,3 +26,4 @@ function appendToDom(thing){
     })
 }
 appendToDom(createHeader())
+
