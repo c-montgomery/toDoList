@@ -1,5 +1,6 @@
 //import whatever from date-fns
 import './style.css';
+import {DatePicker} from '../node_modules/date-time-picker-component/dist/js/date-time-picker-component.min'
 
 function addContent() {
     const div = document.createElement('div');
@@ -12,44 +13,50 @@ function addContent() {
 document.body.appendChild(addContent())
 
 function createHeader(){
-    let header = document.createElement('header')
-    header.textContent = 'To Do'
+    let header = document.createElement('header');
+    header.textContent = 'To Do';
     let button = document.createElement('button');
     button.textContent = '+';
-    button.addEventListener('click', createGoalModal)
+    button.addEventListener('click', modal.goalModal)
     return [header, button]
 }
-
-
-function createGoalModal(){
-    if (!document.querySelector('.goalModal')){
-        let modal = document.createElement('div');
-        modal.textContent = 'Enter a goal title';
-        modal.classList = 'goalModal';
-
-        let exitModalButton = createButton('div', 'modalButton exit', 'X')
-        exitModalButton.addEventListener('click', closeModal)
-
-        let saveModalButton = createButton('div', 'modalButton save', 'save')
-        
-        saveModalButton.addEventListener('click', closeModal)
-
-        modal.appendChild(saveModalButton)
-        modal.appendChild(exitModalButton)
-
-        let html = document.querySelector('html');
-        html.classList = 'darkened';
-
-        let nameInput = document.createElement('input');
-        nameInput.placeholder = 'Goal title'
-        modal.appendChild(nameInput);
-        
-        const content = document.querySelector('.content');
-        content.appendChild(modal)
-
-        
+const modal = (()=>{
+    const goalModal = () => {
+        if (!document.querySelector('.goalModal')){
+            let modal = document.createElement('div');
+            
+            modal.textContent = 'Enter a goal title';
+            modal.classList = 'goalModal';
+    
+            let exitModalButton = createButton('div', 'modalButton exit', 'X')
+            exitModalButton.addEventListener('click', closeModal)
+    
+            let saveModalButton = createButton('div', 'modalButton save', 'save')
+            saveModalButton.addEventListener('click', closeModal)
+    
+            modal.appendChild(saveModalButton)
+            modal.appendChild(exitModalButton)
+    
+            let html = document.querySelector('html');
+            html.classList = 'darkened';
+    
+            let nameInput = document.createElement('input');
+            nameInput.placeholder = 'Goal title'
+            modal.appendChild(nameInput);
+    
+           
+            
+            const content = document.querySelector('.content');
+            content.appendChild(modal)
+    
+            
+        }
     }
-}
+    return{
+        goalModal
+    };
+})();
+
 
 function createButton(type, className, textContent=''){
     let button = document.createElement(type)
