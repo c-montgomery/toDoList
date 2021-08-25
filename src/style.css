@@ -98,10 +98,10 @@ button:active{
   margin: 80px auto;
   width: 60vh;
   height: 60vh;
-  border: 1px blue solid;
+  border: 1px rgb(108, 160, 228) solid;
   padding: 10px;
   border-radius: 6px;
-  background-color: rgba(162, 224, 228, 0.7);
+  background-color: rgba(251, 255, 255, 0.7);
 }
 
 @keyframes fadeIn {
@@ -120,6 +120,11 @@ input{
 .modalButton{
   background-color: cornflowerblue;
   position: absolute
+}
+.goalItem{
+  border-bottom: 2px darkslategrey solid;
+  border-top: 1px darkslategrey solid;
+  margin: 2px
 }
 
 .save{

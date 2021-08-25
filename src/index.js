@@ -1,7 +1,8 @@
-//import whatever from date-fns
+
 import './style.css';
 import {DatePicker} from '../node_modules/date-time-picker-component/dist/js/date-time-picker-component.min'
 
+const fart = 'fart'
 function addContent() {
     const div = document.createElement('div');
     div.classList = 'content';
@@ -17,22 +18,33 @@ function createHeader(){
     header.textContent = 'To Do';
     let button = document.createElement('button');
     button.textContent = '+';
-    button.addEventListener('click', modal.goalModal)
+    button.addEventListener('click', ()=>{
+        const goalModal = modal()
+        goalModal.createGoal('goalModal');
+    })
     return [header, button]
 }
-const modal = (()=>{
-    const goalModal = () => {
+
+const modal = () =>{
+    
+    const createGoal = (type) =>{
         if (!document.querySelector('.goalModal')){
             let modal = document.createElement('div');
             
             modal.textContent = 'Enter a goal title';
-            modal.classList = 'goalModal';
+            modal.classList = type;
     
             let exitModalButton = createButton('div', 'modalButton exit', 'X')
             exitModalButton.addEventListener('click', closeModal)
     
+
             let saveModalButton = createButton('div', 'modalButton save', 'save')
-            saveModalButton.addEventListener('click', closeModal)
+            saveModalButton.addEventListener('click', ()=>{
+               const what = handleDOM()
+               what.makeObject(nameInput.value)
+               closeModal();
+               what.refreshDOM();
+            })
     
             modal.appendChild(saveModalButton)
             modal.appendChild(exitModalButton)
@@ -43,20 +55,48 @@ const modal = (()=>{
             let nameInput = document.createElement('input');
             nameInput.placeholder = 'Goal title'
             modal.appendChild(nameInput);
-    
-           
+            console.log()
             
             const content = document.querySelector('.content');
             content.appendChild(modal)
-    
-            
-        }
-    }
-    return{
-        goalModal
-    };
-})();
 
+
+        }
+    
+        
+    }
+    return {createGoal}
+};
+const refreshDOM = () =>{
+
+
+} 
+
+const handleDOM = (innerText) =>{
+    const toDoList = []
+    const refreshDOM = () => {
+        toDoList.forEach(item => {
+            let goalItem = document.createElement('p');
+            goalItem.classList = 'goalItem'
+            goalItem.textContent = item.name
+            
+            let content = document.querySelector('body');
+            content.append(goalItem)
+            console.log(toDoList)
+            console.log(item.name);
+        })
+        console.log('hey, this should refressssh' )
+    }
+    const makeObject = (innerText) =>{
+        let goal = {name: innerText}
+        toDoList.push(goal);
+
+        return {goal}
+        
+    
+    }
+return {makeObject, refreshDOM}    
+}
 
 function createButton(type, className, textContent=''){
     let button = document.createElement(type)
@@ -79,7 +119,17 @@ function appendToDom(thing){
         console.log(element)
     })
 }
+const saveObject = (innerText) =>{
+    console.log(innerText)
+}
+
+
+const goalList = () => {
+    const array = ['test'];
+    const getArray = () => array;
+    const addToArray = (object) => array.push(object)
+    return{goalList, getArray, addToArray}
+}
 
 
 appendToDom(createHeader())
-
