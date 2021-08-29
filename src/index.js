@@ -2,32 +2,34 @@
 import './style.css';
 import { DatePicker } from '../node_modules/date-time-picker-component/dist/js/date-time-picker-component.min'
 
-const fart = 'fart'
-function addContent() {
-    const div = document.createElement('div');
-    div.classList = 'content';
-
-    return div;
-}
 
 
-document.body.appendChild(addContent())
 
+
+//creates header w/button to create to do objects
 function createHeader() {
+
     let header = document.createElement('header');
     header.textContent = 'To Do';
+
     let button = document.createElement('button');
     button.textContent = '+';
     button.addEventListener('click', () => {
         const goalModal = modal()
         goalModal.createGoal('goalModal');
     })
-    return [header, button]
+
+    let body = document.querySelector('body');
+    const div = document.createElement('div');
+    div.classList = 'content';
+    body.appendChild(div)
+    return [header, button, div]
 }
 
 const modal = () => {
 
     const createGoal = (type) => {
+
         if (!document.querySelector('.goalModal')) {
             let modal = document.createElement('div');
 
@@ -45,6 +47,7 @@ const modal = () => {
                 closeModal();
                 what.refreshDOM();
             })
+            
 
             modal.appendChild(saveModalButton)
             modal.appendChild(exitModalButton)
@@ -55,7 +58,10 @@ const modal = () => {
             let nameInput = document.createElement('input');
             nameInput.placeholder = 'Goal title'
             modal.appendChild(nameInput);
-            console.log()
+
+            let dueDateInput = document.createElement('input');
+            dueDateInput.placeholder = 'Due date'
+            modal.appendChild(dueDateInput);
 
             const content = document.querySelector('.content');
             content.appendChild(modal)
@@ -69,29 +75,54 @@ const modal = () => {
 };
 
 const toDoList = []
+
 const handleDOM = (innerText) => {
+
     let para = document.querySelectorAll('p');
     para.forEach(p => p.remove())
+
+    //create paragraph in dom for every object in list w/deletebutton/showTasksButton
     const refreshDOM = () => {
+        
         toDoList.forEach(item => {
             let goalItem = document.createElement('p');
             goalItem.classList = 'goalItem'
             goalItem.textContent = item.name
 
+            
+
+            let addTasksButton = document.createElement('button');
+            addTasksButton.textContent = 'Add tasks';
+            addTasksButton.addEventListener('click', ()=>{
+                console.log('add to tasks modal')
+            })
+            goalItem.appendChild(addTasksButton)
+
+            let showTasksButton = document.createElement('button');
+            showTasksButton.textContent = 'Show tasks';
+            showTasksButton.addEventListener('click', ()=>{
+                console.log('show tasks')
+                console.log(toDoList)
+
+            })
+            goalItem.appendChild(showTasksButton)
+
             let deleteButton = document.createElement('button')
             deleteButton.textContent = 'Delete'
             goalItem.appendChild(deleteButton)
+
             let content = document.querySelector('body');
-            content.append(goalItem)
-            console.log(toDoList)
-            console.log(item.name);
+            content.appendChild(goalItem)
+
+            console.log(item)
         })
-        console.log('hey, this should refressssh')
     }
     const makeObject = (innerText) => {
-        let goal = { name: innerText }
+        let goal = { name: innerText,
+                     subs: {},
+                     subsVisible: false,
+                     }
         toDoList.push(goal);
-
         return { goal }
 
 
@@ -117,8 +148,11 @@ function closeModal() {
 function appendToDom(thing) {
     let div = document.querySelector('.content');
     thing.forEach(element => {
-        div.appendChild(element);
-        console.log(element)
+
+        if (element.className != 'content'){
+            console.log(element)
+            div.appendChild(element);
+        }
     })
 }
 const saveObject = (innerText) => {

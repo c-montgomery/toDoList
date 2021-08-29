@@ -73,7 +73,7 @@ button{
   z-index: 21;
   border-radius: 3px;
   margin: 5px;
-  transition: transform 1s;
+  transition: transform .5s;
   width: 60px;
 }
 button:hover{
@@ -85,7 +85,7 @@ button:hover{
   z-index: 21;
   border-radius: 5px;
   margin: 5px;
-  transition: transform 1s;
+  transition: transform .5s;
 }
 button:active{
   color: white;
@@ -111,6 +111,7 @@ button:active{
 
 input{
   width: 50vh;
+  margin-bottom: 5px;
 }
 
 .darkened{
