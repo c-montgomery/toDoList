@@ -32,12 +32,27 @@ const modal = () => {
     const addTasksModal = ()=>{
 
         let modal = document.createElement('div');
+        modal.textContent ='Add tasks'
+        modal.className = 'addTasksModal'
+
+        let taskModalInput = document.createElement('input');
+        taskModalInput.className ='taskModalInput'
+        taskModalInput.textContent = 'Task to be added...'
+
         let exitModalButton = createButton('div', 'modalButton exit', 'X')
         exitModalButton.addEventListener('click', closeModal)
-        let saveModalButton = createButton('div', 'modalButton save', 'save')
+        let saveModalButton = createButton('div', 'modalButton save', 'save');
+        saveModalButton.addEventListener('click', ()=>{
 
+            
+        })
+        modal.appendChild(taskModalInput)
         modal.appendChild(saveModalButton)
         modal.appendChild(exitModalButton)
+
+        let html = document.querySelector('html');
+        html.classList = 'darkened';
+
         const content = document.querySelector('.content');
         content.appendChild(modal)
     }
@@ -55,10 +70,10 @@ const modal = () => {
 
 
             let saveModalButton = createButton('div', 'modalButton save', 'save')
-            saveModalButton.addEventListener('click', () => {
+            saveModalButton.addEventListener('click', (e) => {
                 const what = handleDOM()
                 what.makeObject(nameInput.value)
-                closeModal('.goalModal');
+                closeModal(e);
                 what.refreshDOM();
             })
             
