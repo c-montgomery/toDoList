@@ -26,8 +26,22 @@ function createHeader() {
     return [header, button, div]
 }
 
+//Handles modal creation
 const modal = () => {
+    //creates task modal
+    const addTasksModal = ()=>{
 
+        let modal = document.createElement('div');
+        let exitModalButton = createButton('div', 'modalButton exit', 'X')
+        exitModalButton.addEventListener('click', closeModal)
+        let saveModalButton = createButton('div', 'modalButton save', 'save')
+
+        modal.appendChild(saveModalButton)
+        modal.appendChild(exitModalButton)
+        const content = document.querySelector('.content');
+        content.appendChild(modal)
+    }
+    //creates goal modals
     const createGoal = (type) => {
 
         if (!document.querySelector('.goalModal')) {
@@ -44,7 +58,7 @@ const modal = () => {
             saveModalButton.addEventListener('click', () => {
                 const what = handleDOM()
                 what.makeObject(nameInput.value)
-                closeModal();
+                closeModal('.goalModal');
                 what.refreshDOM();
             })
             
@@ -71,11 +85,12 @@ const modal = () => {
 
 
     }
-    return { createGoal }
+    return { createGoal, addTasksModal }
 };
-
+//Main to do list
 const toDoList = []
 
+//DOM Handling, creates p's with goal contents and displays them
 const handleDOM = (innerText) => {
 
     let para = document.querySelectorAll('p');
@@ -95,6 +110,8 @@ const handleDOM = (innerText) => {
             addTasksButton.textContent = 'Add tasks';
             addTasksButton.addEventListener('click', ()=>{
                 console.log('add to tasks modal')
+                let tasksModal = modal();
+                tasksModal.addTasksModal();
             })
             goalItem.appendChild(addTasksButton)
 
@@ -138,11 +155,12 @@ function createButton(type, className, textContent = '') {
 
 }
 
-function closeModal() {
-    let deleted = document.querySelector('.goalModal');
+function closeModal(e) {
+    console.log(e)
+    let deleted = document.getElementsByClassName(e.target.parentElement.className);
     let html = document.querySelector('html');
     html.classList = '';
-    deleted.remove()
+    deleted[0].remove()
 }
 
 function appendToDom(thing) {
