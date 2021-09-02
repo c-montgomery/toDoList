@@ -42,11 +42,9 @@ const modal = () => {
             saveModalButton.addEventListener('click', (e) => {
                 toDoList.forEach(object => {
                     if (object.name = name) {
-                        object.subs.sub = taskModalInput.value
-                        console.log('added' + taskModalInput.value)
-                        console.log('found the object')
-                        console.log(object)
+                        object.subs.sub.push(taskModalInput.value)
                     }
+                closeModal(e);
                 })
 
             })
@@ -140,8 +138,21 @@ const handleDOM = (innerText) => {
             let showTasksButton = document.createElement('button');
             showTasksButton.textContent = 'Show tasks';
             showTasksButton.addEventListener('click', () => {
-
-
+                console.log('in it')
+                console.log(goalItem.textContent)
+                toDoList.forEach(object =>{
+                    
+                    if(object.name == item.name){
+                        item.subs.sub.forEach(sub => {
+                            let subTask = document.createElement('p');
+                            subTask.textContent = sub;
+                            goalItem.appendChild(subTask)
+                        }
+                        )
+                        showTasksButton.textContent = 'Hide tasks';
+                    }
+                })
+                
             })
             goalItem.appendChild(showTasksButton)
 
@@ -191,7 +202,9 @@ const objectMaker = () => {
         let goal = {
             name: innerText,
             dueDate: dueDate,
-            subs: {},
+            subs: {
+                sub:[]
+            },
             subsVisible: false,
         }
         toDoList.push(goal);
