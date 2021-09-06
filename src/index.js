@@ -45,6 +45,8 @@ const modal = () => {
                         object.subs.sub.push(taskModalInput.value)
                     }
                 closeModal(e);
+                let display = handleDOM()
+                display.refreshDOM()
                 })
 
             })
@@ -122,8 +124,9 @@ const handleDOM = (innerText) => {
             let goalItem = document.createElement('p');
             goalItem.classList = 'goalItem'
             goalItem.textContent = item.name
-
-
+            console.log('fart')
+            console.log(goalItem)
+            let body = document.querySelector('body')
 
             let addTasksButton = document.createElement('button');
             addTasksButton.textContent = 'Add task';
@@ -134,26 +137,19 @@ const handleDOM = (innerText) => {
                 tasksModal.addTasksModal(item.name);
             })
             goalItem.appendChild(addTasksButton)
-
+            console.log(goalItem)
             let showTasksButton = document.createElement('button');
             showTasksButton.textContent = 'Show tasks';
+            
             showTasksButton.addEventListener('click', () => {
-                console.log('in it')
-                console.log(goalItem.textContent)
-                toDoList.forEach(object =>{
-                    
-                    if(object.name == item.name){
-                        item.subs.sub.forEach(sub => {
-                            let subTask = document.createElement('p');
-                            subTask.textContent = sub;
-                            goalItem.appendChild(subTask)
-                        }
-                        )
-                        showTasksButton.textContent = 'Hide tasks';
-                    }
+
+                showTasksButton.textContent = 'Hide tasks';
+                
+                toggleHidden(goalItem)
                 })
                 
-            })
+            
+            
             goalItem.appendChild(showTasksButton)
 
             let deleteButton = document.createElement('button')
@@ -162,12 +158,26 @@ const handleDOM = (innerText) => {
 
             let content = document.querySelector('body');
             content.appendChild(goalItem)
+            toDoList.forEach(object =>{
+                    
+                if(object.name == item.name){
+                    item.subs.sub.forEach(sub => {
+                        let subTask = document.createElement('p');
+                        console.log('made a para')
+                        subTask.textContent = sub;
+                        subTask.className = 'hidden'
+                        goalItem.appendChild(subTask)
+                    }
+                    )
+                }
         })
+    })
     }
     const makeObject = () => {
         let toDoObject = objectMaker()
         toDoObject.makeObject()
     }
+    
 
     return { makeObject, refreshDOM }
 }
@@ -179,7 +189,11 @@ function createButton(type, className, textContent = '') {
     return button;
 
 }
-
+function toggleHidden(parent){
+    console.log(parent)
+    let children = document.querySelectorAll('.' + parent.className + ' p')
+    console.log(children)
+}
 function closeModal(e) {
     let deleted = document.getElementsByClassName(e.target.parentElement.className);
     let html = document.querySelector('html');
