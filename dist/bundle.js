@@ -795,6 +795,7 @@ const modal = () => {
                 toDoList.forEach(object => {
                     if (object.name = name) {
                         object.subs.sub.push(taskModalInput.value)
+                        console.log(object.name +' '+ name)
                     }
                 closeModal(e);
                 let display = handleDOM()
@@ -829,8 +830,6 @@ const modal = () => {
             let saveModalButton = createButton('div', 'modalButton save', 'save')
             saveModalButton.addEventListener('click', (e) => {
                 const toDoObject = objectMaker()
-                console.log(nameInput.value + dueDateInput.value)
-                console.log('event fired: save button')
                 toDoObject.makeObject(nameInput.value, dueDateInput.value)
                 closeModal(e);
                 let display = handleDOM()
@@ -876,20 +875,18 @@ const handleDOM = (innerText) => {
             let goalItem = document.createElement('p');
             goalItem.classList = 'goalItem'
             goalItem.textContent = item.name
-            console.log('fart')
-            console.log(goalItem)
             let body = document.querySelector('body')
+            
+            
 
             let addTasksButton = document.createElement('button');
             addTasksButton.textContent = 'Add task';
             let addTasksButtonParent = addTasksButton.parentNode
             addTasksButton.addEventListener('click', () => {
                 let tasksModal = modal();
-                console.log(item.name)
                 tasksModal.addTasksModal(item.name);
             })
             goalItem.appendChild(addTasksButton)
-            console.log(goalItem)
             let showTasksButton = document.createElement('button');
             showTasksButton.textContent = 'Show tasks';
             
@@ -910,20 +907,20 @@ const handleDOM = (innerText) => {
 
             let content = document.querySelector('body');
             content.appendChild(goalItem)
-            toDoList.forEach(object =>{
-                    
-                if(object.name == item.name){
-                    item.subs.sub.forEach(sub => {
-                        let subTask = document.createElement('p');
-                        console.log('made a para')
-                        subTask.textContent = sub;
-                        subTask.className = 'hidden'
-                        goalItem.appendChild(subTask)
-                    }
-                    )
-                }
-        })
+            
     })
+    toDoList.forEach(object =>{
+                    
+        if(object.name == item.name){
+            item.subs.sub.forEach(sub => {
+                let subTask = document.createElement('p');
+                subTask.textContent = sub;
+                subTask.className = 'hidden'
+                goalItem.appendChild(subTask)
+            }
+            )
+        }
+})
     }
     const makeObject = () => {
         let toDoObject = objectMaker()
@@ -942,9 +939,8 @@ function createButton(type, className, textContent = '') {
 
 }
 function toggleHidden(parent){
-    console.log(parent)
     let children = document.querySelectorAll('.' + parent.className + ' p')
-    console.log(children)
+
 }
 function closeModal(e) {
     let deleted = document.getElementsByClassName(e.target.parentElement.className);
