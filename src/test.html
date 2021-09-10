@@ -21,19 +21,82 @@
             let list = [];
 
 class toDoItems{
-    constructor(title, ...subtasks){
+    constructor(title){
         this.title = title;
-        this.subtasks = [...subtasks]
+        this._subtaskArray = []
+        this._isHidden = true;
     }
-    getSubtasks(){
-        alert(this.subtasks)
+
+   
+    set subtaskArray(task){
+        this._subtaskArray.push(task);
+    }
+    get subtaskArray(){
+        return this._subtaskArray;
+    }
+    set dueDate(date){
+        this._dueDate = date;
+    }
+    get dueDate(){
+        return this._dueDate;
+    }
+    createButton(){
+        let button = document.createElement('button');
+        button.textContent = 'toggle subtask display';
+        button.addEventListener('click', (object) => {
+            this.display()
+        })
+        let html = document.querySelector('html');
+        html.appendChild(button)
+    }
+    display(){
+        if (this._isHidden){
+            let html = document.querySelector('html');
+
+            let title = document.createElement('p');
+            title.className = 'goalTitle'
+            title.textContent = this.title;
+
+            html.appendChild(title)
+
+            this._subtaskArray.forEach(subtask =>{
+                let sub = document.createElement('p');
+                sub.textContent = subtask
+                title.appendChild(sub)
+                this._isHidden = false;
+            })
+        } else{
+            let title = document.getElementsByClassName('goalTitle');
+            let children = document.querySelectorAll('p')
+            console.log(children)
+            if (children.length >0){
+                children.forEach(child => child.remove())
+            }
+            this._isHidden = true;r        
+        }
+        
+        
+    }
+    
+}
+
+class Subtask{
+    set title(text){
+        this._title = text;
+    }
+    get title(){
+        return this._title;
     }
 }
 
+let sub = new Subtask()
+sub.title = 'titleofsub'
 
-let thing = new toDoItems('get groceries', 'eat', 'camp')
+let thing = new toDoItems('get groceries');
+thing.createButton();
+thing.subtaskArray = sub.title
+thing.subtaskArray = 'fart'
 
-console.log(thing)
         </script>
     </body>
 </html>
