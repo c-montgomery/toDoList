@@ -561,6 +561,7 @@ class Display{
         list.list.forEach(obj => {
             let para = document.createElement('p');
             para.textContent = obj.title
+            para.className = obj.title
 
             let body = document.querySelector('body');
             body.appendChild(para)
@@ -576,6 +577,19 @@ class Display{
             })
             let showTasksButton = document.createElement('button');
             showTasksButton.textContent = 'Show Tasks'
+            showTasksButton.addEventListener('click', () => {
+                list.list.forEach(object =>{
+                    if (object.title == showTasksButton.parentNode.firstChild.data){
+                        object.subtaskArray.forEach(subtask =>{
+                            let para = document.createElement('p');
+                            para.textContent = subtask.title;
+                            let todo = document.querySelector(`.${showTasksButton.parentNode.firstChild.data}`)
+                            todo.appendChild(para)
+                        })
+                    }
+                })
+            
+            })
             let deleteButton = document.createElement('button')
             deleteButton.textContent = 'Delete'
 
