@@ -42,6 +42,7 @@ class Display{
         list.list.forEach(object => {
             if (object.title == parent){
                 object.subtaskArray = subtask
+                console.log('saved subtask '+ subtask.title)
             }
         })
     }
