@@ -12,9 +12,7 @@
   margin: 0;
   }
   
-  
-  body {
-  padding: 5px;
+  html {
   }
   h1, h2, h3, h4, h5, h6, p, pre, blockquote, form, ul, ol, dl {
   margin: 20px 0;
@@ -55,7 +53,7 @@ html{
   height: 100%;
 }
 .content{
-  display: flex;
+  display: inline-block;
   width: 100%;
   font-size: 50px;
   justify-content: space-around;
@@ -69,12 +67,14 @@ button{
   transform: scale(.95);
   border: none;
   box-shadow: inset 0px 3px 3px #686C6D;
-  z-index: 21;
+  z-index: 1;
   border-radius: 3px;
   margin: 5px;
   transition: transform .5s;
-  width: fit-content;
-  padding: 10px;
+  height: 40px;
+  padding: 1px;
+
+
 }
 button:hover{
   color: black;
@@ -90,13 +90,13 @@ button:hover{
 button:active{
   color: white;
 }
-.goalModal {
-  
-  z-index: 1;
+.modal {
+  z-index: 3;
   font-size: 1.4rem;
   animation: fadeIn linear .5s;
   transition:  0.92s;
   position: absolute;
+ 
   margin: 80px auto;
   width: 60vh;
   height: 60vh;
@@ -179,10 +179,12 @@ input{
 }
 
 .exit{
+  position: absolute;
   font-size: 1rem;
+  
   top: 0px;
   right: 0px;
-  width: 4%;
+  
   text-align: center;
   cursor: pointer;
   border-radius: 5px;

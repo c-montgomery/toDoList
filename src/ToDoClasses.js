@@ -5,7 +5,9 @@ class ToDoItems{
         this._subtaskArray = []
         this._isHidden = true;
     }
-
+    set title(title){
+        this._title = title
+    }
    
     set subtaskArray(task){
         this._subtaskArray.push(task);

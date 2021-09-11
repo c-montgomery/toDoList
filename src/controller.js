@@ -1,3 +1,4 @@
+import "./style.css";
 import { ToDoItems, Subtasks } from "./ToDoClasses";
 import { Modal } from "./Modal";
 
