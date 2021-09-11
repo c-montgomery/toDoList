@@ -535,6 +535,72 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/Display.js":
+/*!************************!*\
+  !*** ./src/Display.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Display": () => (/* binding */ Display)
+/* harmony export */ });
+/* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Modal */ "./src/Modal.js");
+/* harmony import */ var _ToDoClasses__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ToDoClasses */ "./src/ToDoClasses.js");
+
+
+let list = new _ToDoClasses__WEBPACK_IMPORTED_MODULE_1__.ToDoList()
+class Display{
+    constructor(){
+        this.list = []
+    }
+    refresh(){
+        let paragraphs = document.querySelectorAll('p');
+        paragraphs.forEach(paragraph => paragraph.remove())
+        
+        list.list.forEach(obj => {
+            let para = document.createElement('p');
+            para.textContent = obj.title
+
+            let body = document.querySelector('body');
+            body.appendChild(para)
+
+            let addTaskButton = document.createElement('button')
+            addTaskButton.textContent = 'Add Tasks'
+            addTaskButton.addEventListener('click', ()=>{
+                let modal = new _Modal__WEBPACK_IMPORTED_MODULE_0__.Modal()
+                modal.make('Subtask', para.firstChild.data)
+                let input = document.querySelector('input');
+                let subtask = new _ToDoClasses__WEBPACK_IMPORTED_MODULE_1__.Subtask();
+                subtask.title = input.value
+            })
+            let showTasksButton = document.createElement('button');
+            showTasksButton.textContent = 'Show Tasks'
+            let deleteButton = document.createElement('button')
+            deleteButton.textContent = 'Delete'
+
+            para.appendChild(addTaskButton)
+            para.appendChild(showTasksButton)
+            para.appendChild(deleteButton)
+        })
+    }
+    addtoList(object){
+        list.list = object;
+    }
+    addSubtaskToObject(subtask, parent){
+        list.list.forEach(object => {
+            if (object.title == parent){
+                object.subtaskArray = subtask
+            }
+        })
+    }
+
+}
+
+
+
+/***/ }),
+
 /***/ "./src/Modal.js":
 /*!**********************!*\
   !*** ./src/Modal.js ***!
@@ -546,27 +612,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "Modal": () => (/* binding */ Modal)
 /* harmony export */ });
 /* harmony import */ var _ToDoClasses__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ToDoClasses */ "./src/ToDoClasses.js");
+/* harmony import */ var _Display__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Display */ "./src/Display.js");
+
+
+
 
 
 class Modal {
+
     constructor(type) {
         this.type = type
     }
 
-    make() {
-        let baseModal = this.base()
-        if (this.type == 'toDo') {
-            return baseModal
-        }
+    make(type, parentText) {
+    
+        let baseModal = this.base(type, parentText)
+        
         return baseModal
     }
 
-    base() {
+    base(type, parentText) {
         let modal = document.createElement('div');
         modal.textContent = 'Add Task';
         modal.className = 'modal';
-        console.log('this is:'+this)
-        console.log(this)
+
         let modalInput = document.createElement('input');
         modalInput.className = 'taskModalInput';
         modalInput.textContent = 'Task to be added';
@@ -575,15 +644,30 @@ class Modal {
         exitModalButton.classList = 'exit'
         exitModalButton.addEventListener('click', this.closeModal);
         exitModalButton.textContent = 'X'
+      
+        if (type == 'toDo'){
+            let saveModalButton = document.createElement('button');
+            saveModalButton.classList = 'save';
+            saveModalButton.textContent = 'save';
+            saveModalButton.addEventListener('click', this.saveModal)
+            modal.appendChild(saveModalButton);
+            modal.appendChild(exitModalButton);
+            modal.appendChild(modalInput);
 
-        let saveModalButton = document.createElement('button');
-        saveModalButton.classList = 'save';
-        saveModalButton.textContent = 'save';
-        saveModalButton.addEventListener('click', this.saveModal)
+        } else if (type == 'Subtask'){
+            let saveModalButton = document.createElement('button');
+            saveModalButton.classList = 'saveSubtask';
+            saveModalButton.textContent = 'Save Subtask';
+            saveModalButton.addEventListener('click', ()=>{
+                this.saveSubtask(parentText)
+            })
+            modal.appendChild(saveModalButton);
+            modal.appendChild(exitModalButton);
+            modal.appendChild(modalInput);
 
-        modal.appendChild(saveModalButton);
-        modal.appendChild(exitModalButton);
-        modal.appendChild(modalInput);
+        }
+
+
 
         let body = document.querySelector('body');
         body.appendChild(modal)
@@ -600,11 +684,21 @@ class Modal {
         let input = document.querySelector('input').value;
         let newItem = new _ToDoClasses__WEBPACK_IMPORTED_MODULE_0__.ToDoItems();
         newItem.title = input;
-        console.log(newItem)
-        console.log(newItem._title)
         let modal = new Modal()
+        let display = new _Display__WEBPACK_IMPORTED_MODULE_1__.Display()
+        display.addtoList(newItem)
+        display.refresh()
         modal.closeModal()
         
+    }
+    saveSubtask(parent){
+        let input = document.querySelector('input').value;
+        let newSubtask = new _ToDoClasses__WEBPACK_IMPORTED_MODULE_0__.Subtask();
+        newSubtask.title = input;
+        let modal = new Modal('Subtask')
+        let display = new _Display__WEBPACK_IMPORTED_MODULE_1__.Display()
+        display.addSubtaskToObject(newSubtask, parent)
+        modal.closeModal()
     }
 }
 
@@ -621,17 +715,22 @@ class Modal {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ToDoItems": () => (/* binding */ ToDoItems),
-/* harmony export */   "Subtask": () => (/* binding */ Subtask)
+/* harmony export */   "Subtask": () => (/* binding */ Subtask),
+/* harmony export */   "ToDoList": () => (/* binding */ ToDoList)
 /* harmony export */ });
 class ToDoItems{
 
-    constructor(title){
-        this.title = title;
+    constructor(){
         this._subtaskArray = []
         this._isHidden = true;
     }
     set title(title){
         this._title = title
+        let list = new ToDoList();
+        list.list = this;
+    }
+    get title(){
+        return this._title
     }
    
     set subtaskArray(task){
@@ -658,7 +757,27 @@ class Subtask{
     }
     
 }
+class ToDoList{
+    constructor(){
+        this._list = []
+    }
 
+    set list(object){
+        this._list.push(object)
+    }
+
+    get list(){
+        return this._list
+    }
+
+    find(title){
+        this._list.forEach(object => {
+            if (object.title = title ){
+                return object
+            }
+        })
+    }
+}
 
 
 /***/ }),
@@ -857,15 +976,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let toDo = new _ToDoClasses__WEBPACK_IMPORTED_MODULE_1__.ToDoItems('Graduate')
-console.log(toDo)
 
 let addItem = document.createElement('button');
 let html = document.querySelector('html');
 
 addItem.textContent = '+'
 addItem.addEventListener('click', () =>{
-    let modal = new _Modal__WEBPACK_IMPORTED_MODULE_2__.Modal();
-    modal.make()
+    let modal = new _Modal__WEBPACK_IMPORTED_MODULE_2__.Modal('toDo');
+    modal.make('toDo')
 })
 
 html.appendChild(addItem)

@@ -1,24 +1,26 @@
-import { ToDoItems } from "./ToDoClasses"
+import { Subtask, ToDoItems, ToDoList } from "./ToDoClasses"
+import { Display } from "./Display"
+
+
 
 class Modal {
+
     constructor(type) {
         this.type = type
     }
 
-    make() {
-        let baseModal = this.base()
-        if (this.type == 'toDo') {
-            return baseModal
-        }
+    make(type, parentText) {
+    
+        let baseModal = this.base(type, parentText)
+        
         return baseModal
     }
 
-    base() {
+    base(type, parentText) {
         let modal = document.createElement('div');
         modal.textContent = 'Add Task';
         modal.className = 'modal';
-        console.log('this is:'+this)
-        console.log(this)
+
         let modalInput = document.createElement('input');
         modalInput.className = 'taskModalInput';
         modalInput.textContent = 'Task to be added';
@@ -27,15 +29,30 @@ class Modal {
         exitModalButton.classList = 'exit'
         exitModalButton.addEventListener('click', this.closeModal);
         exitModalButton.textContent = 'X'
+      
+        if (type == 'toDo'){
+            let saveModalButton = document.createElement('button');
+            saveModalButton.classList = 'save';
+            saveModalButton.textContent = 'save';
+            saveModalButton.addEventListener('click', this.saveModal)
+            modal.appendChild(saveModalButton);
+            modal.appendChild(exitModalButton);
+            modal.appendChild(modalInput);
 
-        let saveModalButton = document.createElement('button');
-        saveModalButton.classList = 'save';
-        saveModalButton.textContent = 'save';
-        saveModalButton.addEventListener('click', this.saveModal)
+        } else if (type == 'Subtask'){
+            let saveModalButton = document.createElement('button');
+            saveModalButton.classList = 'saveSubtask';
+            saveModalButton.textContent = 'Save Subtask';
+            saveModalButton.addEventListener('click', ()=>{
+                this.saveSubtask(parentText)
+            })
+            modal.appendChild(saveModalButton);
+            modal.appendChild(exitModalButton);
+            modal.appendChild(modalInput);
 
-        modal.appendChild(saveModalButton);
-        modal.appendChild(exitModalButton);
-        modal.appendChild(modalInput);
+        }
+
+
 
         let body = document.querySelector('body');
         body.appendChild(modal)
@@ -52,11 +69,21 @@ class Modal {
         let input = document.querySelector('input').value;
         let newItem = new ToDoItems();
         newItem.title = input;
-        console.log(newItem)
-        console.log(newItem._title)
         let modal = new Modal()
+        let display = new Display()
+        display.addtoList(newItem)
+        display.refresh()
         modal.closeModal()
         
+    }
+    saveSubtask(parent){
+        let input = document.querySelector('input').value;
+        let newSubtask = new Subtask();
+        newSubtask.title = input;
+        let modal = new Modal('Subtask')
+        let display = new Display()
+        display.addSubtaskToObject(newSubtask, parent)
+        modal.closeModal()
     }
 }
 
