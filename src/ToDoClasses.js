@@ -49,13 +49,15 @@ class ToDoList{
     get list(){
         return this._list
     }
-
+    
     find(title){
-        this._list.forEach(object => {
-            if (object.title = title ){
-                return object
+        for (const element of this._list){
+            if (element.title = title ){
+                let array =element.subtaskArray
+                console.log(array)
+                return array
             }
-        })
+        }
     }
 }
 export { ToDoItems, Subtask, ToDoList }

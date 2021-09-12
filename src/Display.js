@@ -3,7 +3,6 @@ import {Subtask, ToDoItems, ToDoList} from "./ToDoClasses"
 let list = new ToDoList()
 class Display{
     constructor(){
-        this.list = []
     }
     refresh(){
         let paragraphs = document.querySelectorAll('p');
@@ -28,18 +27,9 @@ class Display{
             })
             let showTasksButton = document.createElement('button');
             showTasksButton.textContent = 'Show Tasks'
-            showTasksButton.addEventListener('click', () => {
-                list.list.forEach(object =>{
-                    if (object.title == showTasksButton.parentNode.firstChild.data){
-                        object.subtaskArray.forEach(subtask =>{
-                            let para = document.createElement('p');
-                            para.textContent = subtask.title;
-                            let todo = document.querySelector(`.${showTasksButton.parentNode.firstChild.data}`)
-                            todo.appendChild(para)
-                        })
-                    }
-                })
-            
+            showTasksButton.addEventListener('click', (e) => {
+                console.log(e)
+                this.toggleShowTaskButtonState(e)
             })
             let deleteButton = document.createElement('button')
             deleteButton.textContent = 'Delete'
@@ -59,6 +49,31 @@ class Display{
                 console.log('saved subtask '+ subtask.title)
             }
         })
+    }
+    toggleShowTaskButtonState(e){
+        if (e.target.innerText == 'Show Tasks'){
+            list.list.forEach(object =>{
+                console.log('infunctionio!')
+                console.log(e.target.parentNode.className)
+                console.log(object)
+                console.log(object.title)
+                if (object.title ==e.target.parentNode.className){
+                    console.log('in if')
+                    object.subtaskArray.forEach(subtask =>{
+                        let para = document.createElement('li');
+                            para.textContent = subtask.title;
+                            let todo = document.querySelector(`.${e.target.parentNode.className}`)
+                            todo.appendChild(para)
+                            e.target.innerText = 'Hide Tasks'
+                    })
+                }
+            })
+        }else {
+            let deletingListItems = document.querySelectorAll(`.${e.target.parentNode.className} li`)
+            deletingListItems.forEach(element => element.remove())
+            e.target.innerText = 'Show Tasks'
+        }
+        console.log('in function')
     }
 
 }
