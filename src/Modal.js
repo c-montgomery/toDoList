@@ -92,7 +92,7 @@ class Modal {
             console.log('in elsestatement')
             let warning = document.createElement('p');
             warning.className = 'warning';
-            warning.textContent = 'Warning: title must be alphabetical!'
+            warning.textContent = 'Warning: Title must start with a letter!'
             console.log(warning)
             console.log(taskModalInput)
             window.appendChild(warning)

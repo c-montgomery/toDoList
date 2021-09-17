@@ -632,7 +632,7 @@ class Display {
   isDigit(string){
     let checkedInput = /[0-9]/;
     console.log('heres the value: ' + checkedInput.test(string))
-    return checkedInput.test(string)
+    return checkedInput.test(string[0])
   }
 }
 
@@ -746,7 +746,7 @@ class Modal {
             console.log('in elsestatement')
             let warning = document.createElement('p');
             warning.className = 'warning';
-            warning.textContent = 'Warning: title must be alphabetical!'
+            warning.textContent = 'Warning: Title must start with a letter!'
             console.log(warning)
             console.log(taskModalInput)
             window.appendChild(warning)

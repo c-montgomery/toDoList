@@ -83,7 +83,7 @@ class Display {
   isDigit(string){
     let checkedInput = /[0-9]/;
     console.log('heres the value: ' + checkedInput.test(string))
-    return checkedInput.test(string)
+    return checkedInput.test(string[0])
   }
 }
 
