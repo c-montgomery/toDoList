@@ -79,11 +79,24 @@ class Modal {
     saveSubtask(parent){
         let input = document.querySelector('input').value;
         let newSubtask = new Subtask();
-        newSubtask.title = input;
         let modal = new Modal('Subtask')
         let display = new Display()
-        display.addSubtaskToObject(newSubtask, parent)
-        modal.closeModal()
+        let taskModalInput = document.querySelector('.taskModalInput');
+        let window = document.querySelector('.modal')
+        if (!display.isDigit(input)){
+            console.log('sidplayisTRUE')
+            newSubtask.title = input;
+            display.addSubtaskToObject(newSubtask, parent)
+            modal.closeModal()
+        } else{
+            console.log('in elsestatement')
+            let warning = document.createElement('p');
+            warning.className = 'warning';
+            warning.textContent = 'Warning: title must be alphabetical!'
+            console.log(warning)
+            console.log(taskModalInput)
+            window.appendChild(warning)
+        }
     }
 }
 

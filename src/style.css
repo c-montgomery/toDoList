@@ -206,3 +206,6 @@ input{
 li {
   list-style-type: none;
 }
+.warning{
+  color: red;
+}

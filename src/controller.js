@@ -1,16 +1,14 @@
-import "./style.css";
-import { ToDoItems, Subtasks } from "./ToDoClasses";
-import { Modal } from "./Modal";
+import './style.css';
+import { ToDoItems, Subtasks } from './ToDoClasses';
+import { Modal } from './Modal';
 
-let toDo = new ToDoItems('Graduate')
+const addItem = document.createElement('button');
+const html = document.querySelector('html');
 
-let addItem = document.createElement('button');
-let html = document.querySelector('html');
+addItem.textContent = '+';
+addItem.addEventListener('click', () => {
+  const modal = new Modal('toDo');
+  modal.make('toDo');
+});
 
-addItem.textContent = '+'
-addItem.addEventListener('click', () =>{
-    let modal = new Modal('toDo');
-    modal.make('toDo')
-})
-
-html.appendChild(addItem)
+html.appendChild(addItem);
