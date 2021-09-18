@@ -14,8 +14,8 @@ class Display {
       para.textContent = obj.title;
       para.className = obj.title;
 
-      const body = document.querySelector('body');
-      body.appendChild(para);
+      const html = document.querySelector('html');
+      html.appendChild(para);
 
       const addTaskButton = document.createElement('button');
       addTaskButton.textContent = 'Add Tasks';
@@ -34,7 +34,6 @@ class Display {
       });
       const deleteButton = document.createElement('button');
       deleteButton.textContent = 'Delete';
-
       para.appendChild(addTaskButton);
       para.appendChild(showTasksButton);
       para.appendChild(deleteButton);
@@ -57,10 +56,6 @@ class Display {
   toggleShowTaskButtonState(e) {
     if (e.target.innerText == 'Show Tasks') {
       list.list.forEach(object => {
-        console.log('infunctionio!');
-        console.log(e.target.parentNode.className);
-        console.log(object);
-        console.log(object.title);
         if (object.title == e.target.parentNode.className) {
           console.log('in if');
           object.subtaskArray.forEach(subtask => {

@@ -563,8 +563,8 @@ class Display {
       para.textContent = obj.title;
       para.className = obj.title;
 
-      const body = document.querySelector('body');
-      body.appendChild(para);
+      const html = document.querySelector('html');
+      html.appendChild(para);
 
       const addTaskButton = document.createElement('button');
       addTaskButton.textContent = 'Add Tasks';
