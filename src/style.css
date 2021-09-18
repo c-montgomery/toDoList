@@ -12,8 +12,7 @@
   margin: 0;
   }
   
-  html {
-  }
+  
   h1, h2, h3, h4, h5, h6, p, pre, blockquote, form, ul, ol, dl {
   margin: 20px 0;
   }
@@ -127,7 +126,7 @@ div.addTasksModal{
   100% {opacity:1;}
 }
 
-.goalItem p{
+html > p{
 
   border-bottom: black 1px solid;
   margin: 1px;
@@ -152,15 +151,13 @@ input{
   background-color: rgb(0, 0, 0.2)
 }
 
-.modalButton{
+.saveSubtask{
   background-color: cornflowerblue;
-  position: absolute
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
 }
-.goalItem{
-  border-bottom: 2px darkslategrey solid;
-  border-top: 1px darkslategrey solid;
-  margin: 2px
-}
+
 
 .save{
   font-size: 1.4rem;

@@ -34,6 +34,7 @@ class Display {
       });
       const deleteButton = document.createElement('button');
       deleteButton.textContent = 'Delete';
+      deleteButton.addEventListener('click', (e)=> this.deleteObject(e))
       para.appendChild(addTaskButton);
       para.appendChild(showTasksButton);
       para.appendChild(deleteButton);
@@ -72,7 +73,11 @@ class Display {
       deletingListItems.forEach(element => element.remove());
       e.target.innerText = 'Show Tasks';
     }
-    console.log('in function');
+  }
+
+  deleteObject(e){
+    list.removeObject(e.target.parentElement.firstChild.data)
+    this.refresh()
   }
 
   isDigit(string){

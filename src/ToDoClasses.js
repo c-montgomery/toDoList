@@ -61,5 +61,24 @@ class ToDoList{
             }
         }
     }
+    removeObject(deleted){
+        for (const obj of this._list){
+           console.log('inremoveobject')
+            if (obj.title = deleted){
+                console.log('in if')
+                console.log(this)
+                console.log(deleted)
+                this._list.splice(this._list.indexOf(deleted))
+               
+            }
+        }
+    }
+    getObjectIndex(name){
+        this._list.forEach(object =>{
+            if(object.title = name){
+
+            }
+        })
+    }
 }
 export { ToDoItems, Subtask, ToDoList }
