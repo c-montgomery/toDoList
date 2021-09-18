@@ -49,7 +49,9 @@ class ToDoList{
     get list(){
         return this._list
     }
-    
+    static getAll(instances){
+        return this._list
+    }
     find(title){
         for (const element of this._list){
             if (element.title = title ){

@@ -543,7 +543,8 @@ module.exports = styleTagTransform;
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Display": () => (/* binding */ Display)
+/* harmony export */   "Display": () => (/* binding */ Display),
+/* harmony export */   "list": () => (/* binding */ list)
 /* harmony export */ });
 /* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Modal */ "./src/Modal.js");
 /* harmony import */ var _ToDoClasses__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ToDoClasses */ "./src/ToDoClasses.js");
@@ -816,7 +817,9 @@ class ToDoList{
     get list(){
         return this._list
     }
-    
+    static getAll(instances){
+        return this._list
+    }
     find(title){
         for (const element of this._list){
             if (element.title = title ){
@@ -1020,6 +1023,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ "./src/style.css");
 /* harmony import */ var _ToDoClasses__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ToDoClasses */ "./src/ToDoClasses.js");
 /* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Modal */ "./src/Modal.js");
+/* harmony import */ var _Display__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Display */ "./src/Display.js");
+
 
 
 
@@ -1032,14 +1037,28 @@ addItem.addEventListener('click', () => {
   const modal = new _Modal__WEBPACK_IMPORTED_MODULE_2__.Modal('toDo');
   modal.make('toDo');
   const sortButton = document.createElement('button');
+  if (!document.querySelector('.sortButton')){
+    html.appendChild(sortButton)
+  }
+  sortButton.className = 'sortButton'
   sortButton.textContent = 'sort'
-  sortButton.addEventListener('click', ()=>
-    console.log('here is a list of sorted items'))
-  html.appendChild(sortButton)
-});
+  sortButton.addEventListener('click', ()=> {
+    logSortedList()
+  })
+  
+
+  });
 
 html.appendChild(addItem);
 
+
+function logSortedList(){
+  let objectos = document.getElementsByClassName('ToDoItems')
+  console.log(_Display__WEBPACK_IMPORTED_MODULE_3__.list)
+  console.log(_ToDoClasses__WEBPACK_IMPORTED_MODULE_1__.ToDoList.getAll())
+  console.log(objectos)
+  console.log('in logsorted function')
+}
 })();
 
 /******/ })()

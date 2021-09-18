@@ -82,4 +82,4 @@ class Display {
   }
 }
 
-export { Display };
+export { Display, list};
