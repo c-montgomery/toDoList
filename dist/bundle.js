@@ -583,7 +583,6 @@ class Display {
       });
       const deleteButton = document.createElement('button');
       deleteButton.textContent = 'Delete';
-
       para.appendChild(addTaskButton);
       para.appendChild(showTasksButton);
       para.appendChild(deleteButton);
@@ -606,10 +605,6 @@ class Display {
   toggleShowTaskButtonState(e) {
     if (e.target.innerText == 'Show Tasks') {
       list.list.forEach(object => {
-        console.log('infunctionio!');
-        console.log(e.target.parentNode.className);
-        console.log(object);
-        console.log(object.title);
         if (object.title == e.target.parentNode.className) {
           console.log('in if');
           object.subtaskArray.forEach(subtask => {
@@ -1036,6 +1031,11 @@ addItem.textContent = '+';
 addItem.addEventListener('click', () => {
   const modal = new _Modal__WEBPACK_IMPORTED_MODULE_2__.Modal('toDo');
   modal.make('toDo');
+  const sortButton = document.createElement('button');
+  sortButton.textContent = 'sort'
+  sortButton.addEventListener('click', ()=>
+    console.log('here is a list of sorted items'))
+  html.appendChild(sortButton)
 });
 
 html.appendChild(addItem);

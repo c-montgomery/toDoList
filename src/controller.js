@@ -9,6 +9,11 @@ addItem.textContent = '+';
 addItem.addEventListener('click', () => {
   const modal = new Modal('toDo');
   modal.make('toDo');
+  const sortButton = document.createElement('button');
+  sortButton.textContent = 'sort'
+  sortButton.addEventListener('click', ()=>
+    console.log('here is a list of sorted items'))
+  html.appendChild(sortButton)
 });
 
 html.appendChild(addItem);
