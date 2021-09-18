@@ -1,7 +1,7 @@
 import './style.css';
 import { ToDoItems, Subtasks, ToDoList } from './ToDoClasses';
 import { Modal } from './Modal';
-import { list } from './Display';
+import { Display, list } from './Display';
 
 const addItem = document.createElement('button');
 const html = document.querySelector('html');
@@ -28,8 +28,7 @@ html.appendChild(addItem);
 
 function logSortedList(){
   let objectos = document.getElementsByClassName('ToDoItems')
-  console.log(list)
-  console.log(ToDoList.getAll())
-  console.log(objectos)
-  console.log('in logsorted function')
+  console.log(list.list .sort((a, b)=>a.title>b.title ? 1: -1))
+  let display = new Display()
+  display.refresh()
 }

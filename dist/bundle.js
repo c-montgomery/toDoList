@@ -1054,10 +1054,9 @@ html.appendChild(addItem);
 
 function logSortedList(){
   let objectos = document.getElementsByClassName('ToDoItems')
-  console.log(_Display__WEBPACK_IMPORTED_MODULE_3__.list)
-  console.log(_ToDoClasses__WEBPACK_IMPORTED_MODULE_1__.ToDoList.getAll())
-  console.log(objectos)
-  console.log('in logsorted function')
+  console.log(_Display__WEBPACK_IMPORTED_MODULE_3__.list.list.sort((a, b)=>a.title>b.title ? 1: -1))
+  let display = new _Display__WEBPACK_IMPORTED_MODULE_3__.Display()
+  display.refresh()
 }
 })();
 
