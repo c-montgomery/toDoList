@@ -62,13 +62,14 @@ class ToDoList{
         }
     }
     removeObject(deleted){
+        console.log('this is deleted:' + deleted)
         for (const obj of this._list){
-           console.log('inremoveobject')
-            if (obj.title = deleted){
+            if (obj.title == deleted){
+                console.log(obj.title)
                 console.log('in if')
                 console.log(this)
                 console.log(deleted)
-                this._list.splice(this._list.indexOf(deleted))
+                this._list.splice(this._list.indexOf(obj),1)
                
             }
         }

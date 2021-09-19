@@ -76,7 +76,7 @@ class Display {
   }
 
   deleteObject(e){
-    list.removeObject(e.target.parentElement.firstChild.data)
+    list.removeObject(e.target.parentNode.className)
     this.refresh()
   }
 

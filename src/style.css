@@ -51,6 +51,9 @@ html{
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#23E8D8", endColorstr="#4A4B82", GradientType=1 );
   height: 100%;
 }
+html{
+  text-align: right;
+}
 .content{
   display: inline-block;
   width: 100%;
@@ -62,7 +65,7 @@ html{
 
 button{
   font-size: 30px;
-  color: #686c6d;
+  color:rgb(91, 104, 103);
   transform: scale(.95);
   border: none;
   box-shadow: inset 0px 3px 3px #686C6D;
@@ -86,6 +89,7 @@ button:hover{
   margin: 5px;
   transition: transform .5s;
 }
+
 button:active{
   color: white;
 }
