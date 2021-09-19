@@ -38,6 +38,8 @@ class Modal {
             modal.appendChild(saveModalButton);
             modal.appendChild(exitModalButton);
             modal.appendChild(modalInput);
+            let body = document.querySelector('body');
+            body.appendChild(modal)
 
         } else if (type == 'Subtask'){
             let saveModalButton = document.createElement('button');
@@ -49,13 +51,29 @@ class Modal {
             modal.appendChild(saveModalButton);
             modal.appendChild(exitModalButton);
             modal.appendChild(modalInput);
+            let body = document.querySelector('body');
+            body.appendChild(modal)
 
+        } else if (type == 'sortDropdown'){
+            if (!document.querySelector('.sortDropdown')){
+                let container = document.createElement('div')
+                container.className = 'sortDropdown'
+                let alphabetical = document.createElement('div');
+                alphabetical.textContent = 'A-Z'
+                let dueDate = document.createElement('div');
+                dueDate.textContent = 'By due date'
+                let priority = document.createElement('div');
+                priority.textContent = 'By priority'
+                
+
+                container.appendChild(alphabetical)
+                container.appendChild(dueDate)
+                container.appendChild(priority)
+
+                let sortButton = document.querySelector('.sortButton');
+                sortButton.appendChild(container)}
         }
-
-
-
-        let body = document.querySelector('body');
-        body.appendChild(modal)
+        
     }
 
     closeModal() {
@@ -98,6 +116,13 @@ class Modal {
             window.appendChild(warning)
         }
     }
+
+    sortListAlphabetically(list){
+        let objectos = document.getElementsByClassName('ToDoItems')
+        console.log(list.list.sort((a, b)=>a.title>b.title ? 1: -1))
+        let display = new Display()
+        display.refresh()
+      }
 }
 
 export { Modal }

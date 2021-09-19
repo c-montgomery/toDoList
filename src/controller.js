@@ -17,7 +17,8 @@ addItem.addEventListener('click', () => {
   sortButton.className = 'sortButton'
   sortButton.textContent = 'sort'
   sortButton.addEventListener('click', ()=> {
-    logSortedList()
+    modal.make('sortDropdown')
+    modal.sortListAlphabetically(list)
   })
   
 
@@ -28,7 +29,7 @@ html.appendChild(addItem);
 
 function logSortedList(){
   let objectos = document.getElementsByClassName('ToDoItems')
-  console.log(list.list .sort((a, b)=>a.title>b.title ? 1: -1))
+  console.log(list.list.sort((a, b)=>a.title>b.title ? 1: -1))
   let display = new Display()
   display.refresh()
 }
