@@ -663,6 +663,7 @@ class Modal {
     constructor(type) {
         this.type = type
     }
+    
 
     make(type, parentText) {
     
@@ -686,10 +687,19 @@ class Modal {
         exitModalButton.textContent = 'X'
       
         if (type == 'toDo'){
+            console.log(this)
+            window.addEventListener('keypress', function(e){
+                if (e.key == 'Enter'){
+                    if(document.querySelector('.save')){
+                    Modal.saveModal()
+                    }
+                    
+                }
+            })
             let saveModalButton = document.createElement('button');
             saveModalButton.classList = 'save';
             saveModalButton.textContent = 'save';
-            saveModalButton.addEventListener('click', this.saveModal)
+            saveModalButton.addEventListener('click', Modal.saveModal)
             modal.appendChild(saveModalButton);
             modal.appendChild(exitModalButton);
             modal.appendChild(modalInput);
@@ -731,24 +741,24 @@ class Modal {
         
     }
 
-    closeModal() {
+    static closeModal() {
 
         let modal = document.querySelector('.modal')
         modal.remove();
     }
-
-    saveModal() {
+    static saveModal() {
 
         let input = document.querySelector('input').value;
+        console.log(input)
         let newItem = new _ToDoClasses__WEBPACK_IMPORTED_MODULE_0__.ToDoItems();
         newItem.title = input;
-        let modal = new Modal()
         let display = new _Display__WEBPACK_IMPORTED_MODULE_1__.Display()
         display.addtoList(newItem)
         display.refresh()
-        modal.closeModal()
+        Modal.closeModal()
         
     }
+    
     saveSubtask(parent){
         let input = document.querySelector('input').value;
         let newSubtask = new _ToDoClasses__WEBPACK_IMPORTED_MODULE_0__.Subtask();
