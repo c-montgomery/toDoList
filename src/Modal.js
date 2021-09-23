@@ -9,7 +9,7 @@ class Modal {
         this.type = type
     }
 
-    //returns modal object 
+    //returns modal
     make(type, parentText) {
 
         let baseModal = this.base(type, parentText)
@@ -20,12 +20,13 @@ class Modal {
     //returns modal based on type arguement
     base(type, parentText) {
         let modal = document.createElement('div');
-        modal.textContent = 'Add Task';
+        modal.textContent = 'Title';
+        
         modal.className = 'modal';
 
         let modalInput = document.createElement('input');
         modalInput.className = 'taskModalInput';
-        modalInput.textContent = 'Task to be added';
+        modalInput.placeholder = 'Task to be added';
 
         let exitModalButton = document.createElement('button');
         exitModalButton.classList = 'exit'
@@ -44,15 +45,23 @@ class Modal {
             })
             let saveModalButton = document.createElement('button');
             saveModalButton.classList = 'save';
-            saveModalButton.textContent = 'save';
+            saveModalButton.innerHTML = 'save';
             saveModalButton.addEventListener('click', function(e){
 
                 Modal.saveModal()
 
             })
-            modal.appendChild(saveModalButton);
+            let dueDateInput = document.createElement('input');
+            dueDateInput.placeholder = 'MM/DD/YYYY'
+            let dueDateTitle = document.createElement('p')
+            dueDateTitle.textContent = 'Due date:'
+            
+           
             modal.appendChild(exitModalButton);
             modal.appendChild(modalInput);
+            modal.appendChild(dueDateTitle);
+            modal.appendChild(dueDateInput);
+            modal.appendChild(saveModalButton);
             let body = document.querySelector('body');
             body.appendChild(modal)
 
