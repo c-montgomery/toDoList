@@ -101,7 +101,7 @@ button:active{
   animation: fadeIn linear .5s;
   transition:  0.92s;
   position: absolute;
- 
+  margin: 25vh 30%;
   margin: 80px auto;
   width: 60vh;
   height: 60vh;
@@ -212,9 +212,22 @@ li {
 .warning{
   color: red;
 }
-.sortDropdown{
+.sortDropdown div{
 display: flex;
 flex-direction: column;
 color: black;
 background-color: grey;
+width: 60%;
+position: relative;
+top: 0px;
+justify-content: center;
+
+
+}
+.sortDropdown{
+  width: 60%;
+}
+.sortButton{
+  display: flex;
+  flex-direction: column;
 }

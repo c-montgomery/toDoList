@@ -91,7 +91,7 @@ class Modal {
                     Modal.closeModal()
                     e.stopPropagation()
                 })
-                priority.addEventListener('click', ()=>{
+                priority.addEventListener('click', (e)=>{
 
                     console.log('priotityfired')
                     Modal.closeModal()
