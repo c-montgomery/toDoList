@@ -92,7 +92,7 @@ class Modal {
                     e.stopPropagation()
                 })
                 priority.addEventListener('click', ()=>{
-                    
+
                     console.log('priotityfired')
                     Modal.closeModal()
                     e.stopPropagation()
@@ -111,12 +111,12 @@ class Modal {
 
     static closeModal() {
         let dropdown = document.querySelector('.sortDropdown')
-        console.log(dropdown)
-        dropdown.remove()
+        if (dropdown){
+            dropdown.remove()}
         let modal = document.querySelector('.modal')
         if (modal){
-        modal.remove();
-        }
+            modal.remove();
+            }
     }
     static saveModal() {
 
