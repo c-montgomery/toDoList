@@ -53,9 +53,9 @@ class Modal {
             })
             let dueDateInput = document.createElement('input');
             dueDateInput.className = 'dueDateInput'
-            dueDateInput.placeholder = 'MM/DD/YYYY'
+            dueDateInput.placeholder = 'mm/dd/yyyy'
             let dueDateTitle = document.createElement('p')
-            dueDateTitle.textContent = 'Due date:'
+            dueDateTitle.textContent = 'Due date'
             
            
             modal.appendChild(exitModalButton);
@@ -113,7 +113,8 @@ class Modal {
                 container.appendChild(priority)
 
                 let sortButton = document.querySelector('.sortButton');
-                sortButton.appendChild(container)
+                let html = document.querySelector('html')
+                html.appendChild(container)
             }
         }
 

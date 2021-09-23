@@ -13,9 +13,7 @@
   }
   
   
-  h1, h2, h3, h4, h5, h6, p, pre, blockquote, form, ul, ol, dl {
-  margin: 20px 0;
-  }
+ 
   li, dd, blockquote {
   margin-left: 40px;
   }
@@ -68,13 +66,13 @@ html{
 button{
   font-size: 30px;
   color:rgb(91, 104, 103);
-  transform: scale(.95);
+  transform: scale(.98);
   border: none;
   box-shadow: inset 0px 3px 3px #686C6D;
   z-index: 1;
   border-radius: 3px;
   margin: 5px;
-  transition: transform .5s;
+  transition: transform .3s;
   height: 40px;
   padding: 1px;
 
@@ -89,7 +87,7 @@ button:hover{
   z-index: 21;
   border-radius: 5px;
   margin: 5px;
-  transition: transform .5s;
+  transition: transform .3s;
 }
 
 button:active{
@@ -142,6 +140,8 @@ input{
   width: 50vh;
   margin-bottom: 5px;
   margin-left: 5px;
+  font-size: 1rem;
+  border-top: 1px solid black;
 }
 
 .taskModalInput{
@@ -176,7 +176,7 @@ input{
   border-radius: 3px;
 }
 .save:hover{
-  transform: scale(1.1);
+  transform: scale(1.03);
   background-color: rgb(126, 141, 181);
   box-shadow: 1px 5px 5px rgb(92, 91, 91);
 }
@@ -195,7 +195,7 @@ input{
 }
 
 .exit:hover{
-  transform: scale(1.1);
+  transform: scale(1.03);
   cursor: pointer;
   background-color: red;
   color: white;
@@ -213,22 +213,25 @@ li {
   color: red;
 }
 .sortDropdown div{
-display: flex;
-flex-direction: column;
+
 color: black;
-background-color: grey;
-width: 60%;
-position: relative;
-top: 0px;
-justify-content: center;
+background-color: rgb(210, 210, 210);
+width: 40%;
+
 
 
 }
 .sortDropdown{
-  width: 60%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .sortButton{
   display: flex;
+  justify-content: center;
   flex-direction: column;
 }
 .dueDate{
