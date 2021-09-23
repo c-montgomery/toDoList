@@ -663,12 +663,12 @@ class Modal {
     constructor(type) {
         this.type = type
     }
-    
+
 
     make(type, parentText) {
-    
+
         let baseModal = this.base(type, parentText)
-        
+
         return baseModal
     }
 
@@ -683,17 +683,17 @@ class Modal {
 
         let exitModalButton = document.createElement('button');
         exitModalButton.classList = 'exit'
-        exitModalButton.addEventListener('click', this.closeModal);
+        exitModalButton.addEventListener('click', Modal.closeModal);
         exitModalButton.textContent = 'X'
-      
-        if (type == 'toDo'){
+
+        if (type == 'toDo') {
             console.log(this)
-            window.addEventListener('keypress', function(e){
-                if (e.key == 'Enter'){
-                    if(document.querySelector('.save')){
-                    Modal.saveModal()
+            window.addEventListener('keypress', function (e) {
+                if (e.key == 'Enter') {
+                    if (document.querySelector('.save')) {
+                        Modal.saveModal()
                     }
-                    
+
                 }
             })
             let saveModalButton = document.createElement('button');
@@ -706,11 +706,11 @@ class Modal {
             let body = document.querySelector('body');
             body.appendChild(modal)
 
-        } else if (type == 'Subtask'){
+        } else if (type == 'Subtask') {
             let saveModalButton = document.createElement('button');
             saveModalButton.classList = 'saveSubtask';
             saveModalButton.textContent = 'Save Subtask';
-            saveModalButton.addEventListener('click', ()=>{
+            saveModalButton.addEventListener('click', () => {
                 this.saveSubtask(parentText)
             })
             modal.appendChild(saveModalButton);
@@ -719,8 +719,8 @@ class Modal {
             let body = document.querySelector('body');
             body.appendChild(modal)
 
-        } else if (type == 'sortDropdown'){
-            if (!document.querySelector('.sortDropdown')){
+        } else if (type == 'sortDropdown') {
+            if (!document.querySelector('.sortDropdown')) {
                 let container = document.createElement('div')
                 container.className = 'sortDropdown'
                 let alphabetical = document.createElement('div');
@@ -729,22 +729,31 @@ class Modal {
                 dueDate.textContent = 'By due date'
                 let priority = document.createElement('div');
                 priority.textContent = 'By priority'
-                
+
+                alphabetical.addEventListener('click', ()=>{
+                console.log("alphabetical")
+                Modal.closeModal(document.querySelector('.sortDropdown'))
+                })
+                dueDate.addEventListener('click', ()=>console.log(dueDate))
+                priority.addEventListener('click', ()=>console.log(priority))
 
                 container.appendChild(alphabetical)
                 container.appendChild(dueDate)
                 container.appendChild(priority)
 
                 let sortButton = document.querySelector('.sortButton');
-                sortButton.appendChild(container)}
+                sortButton.appendChild(container)
+            }
         }
-        
+
     }
 
     static closeModal() {
-
+        
         let modal = document.querySelector('.modal')
+        if (modal){
         modal.remove();
+        }
     }
     static saveModal() {
 
@@ -756,22 +765,22 @@ class Modal {
         display.addtoList(newItem)
         display.refresh()
         Modal.closeModal()
-        
+
     }
-    
-    saveSubtask(parent){
+
+    saveSubtask(parent) {
         let input = document.querySelector('input').value;
         let newSubtask = new _ToDoClasses__WEBPACK_IMPORTED_MODULE_0__.Subtask();
         let modal = new Modal('Subtask')
         let display = new _Display__WEBPACK_IMPORTED_MODULE_1__.Display()
         let taskModalInput = document.querySelector('.taskModalInput');
         let window = document.querySelector('.modal')
-        if (!display.isDigit(input)){
+        if (!display.isDigit(input)) {
             console.log('sidplayisTRUE')
             newSubtask.title = input;
             display.addSubtaskToObject(newSubtask, parent)
-            modal.closeModal()
-        } else{
+            Modal.closeModal()
+        } else {
             console.log('in elsestatement')
             let warning = document.createElement('p');
             warning.className = 'warning';
@@ -782,12 +791,12 @@ class Modal {
         }
     }
 
-    sortListAlphabetically(list){
+    sortListAlphabetically(list) {
         let objectos = document.getElementsByClassName('ToDoItems')
-        console.log(list.list.sort((a, b)=>a.title>b.title ? 1: -1))
+        console.log(list.list.sort((a, b) => a.title > b.title ? 1 : -1))
         let display = new _Display__WEBPACK_IMPORTED_MODULE_1__.Display()
         display.refresh()
-      }
+    }
 }
 
 
