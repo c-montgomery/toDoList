@@ -6,6 +6,8 @@ import { Display, list } from './Display';
 const addItem = document.createElement('button');
 const html = document.querySelector('html');
 
+//Create basic UI
+
 addItem.textContent = '+';
 addItem.addEventListener('click', () => {
   const modal = new Modal('toDo');
@@ -17,6 +19,7 @@ addItem.addEventListener('click', () => {
   sortButton.className = 'sortButton'
   sortButton.textContent = 'sort'
   sortButton.addEventListener('click', ()=> {
+    console.log('sort button PRESSEED!')
     modal.make('sortDropdown')
     modal.sortListAlphabetically(list)
   })

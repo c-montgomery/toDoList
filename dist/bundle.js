@@ -671,7 +671,7 @@ class Modal {
 
         return baseModal
     }
-    
+
     //returns modal based on type arguement
     base(type, parentText) {
         let modal = document.createElement('div');
@@ -700,8 +700,10 @@ class Modal {
             let saveModalButton = document.createElement('button');
             saveModalButton.classList = 'save';
             saveModalButton.textContent = 'save';
-            saveModalButton.addEventListener('click', function(){
+            saveModalButton.addEventListener('click', function(e){
+
                 Modal.saveModal()
+
             })
             modal.appendChild(saveModalButton);
             modal.appendChild(exitModalButton);
@@ -733,12 +735,23 @@ class Modal {
                 let priority = document.createElement('div');
                 priority.textContent = 'By priority'
 
-                alphabetical.addEventListener('click', ()=>{
-                console.log("alphabetical")
-                Modal.closeModal(document.querySelector('.sortDropdown'))
+                alphabetical.addEventListener('click', (e)=>{
+
+                    console.log("alphabetical")
+                    Modal.closeModal()
+                    e.stopPropagation()
                 })
-                dueDate.addEventListener('click', ()=>console.log(dueDate))
-                priority.addEventListener('click', ()=>console.log(priority))
+                dueDate.addEventListener('click', (e)=>{
+
+                    Modal.closeModal()
+                    e.stopPropagation()
+                })
+                priority.addEventListener('click', ()=>{
+                    
+                    console.log('priotityfired')
+                    Modal.closeModal()
+                    e.stopPropagation()
+                })
 
                 container.appendChild(alphabetical)
                 container.appendChild(dueDate)
@@ -752,7 +765,9 @@ class Modal {
     }
 
     static closeModal() {
-        
+        let dropdown = document.querySelector('.sortDropdown')
+        console.log(dropdown)
+        dropdown.remove()
         let modal = document.querySelector('.modal')
         if (modal){
         modal.remove();
@@ -1104,6 +1119,8 @@ __webpack_require__.r(__webpack_exports__);
 const addItem = document.createElement('button');
 const html = document.querySelector('html');
 
+//Create basic UI
+
 addItem.textContent = '+';
 addItem.addEventListener('click', () => {
   const modal = new _Modal__WEBPACK_IMPORTED_MODULE_2__.Modal('toDo');
@@ -1115,6 +1132,7 @@ addItem.addEventListener('click', () => {
   sortButton.className = 'sortButton'
   sortButton.textContent = 'sort'
   sortButton.addEventListener('click', ()=> {
+    console.log('sort button PRESSEED!')
     modal.make('sortDropdown')
     modal.sortListAlphabetically(_Display__WEBPACK_IMPORTED_MODULE_3__.list)
   })
