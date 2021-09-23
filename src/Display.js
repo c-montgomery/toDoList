@@ -4,7 +4,7 @@ const list = new ToDoList();
 class Display {
   constructor() {
   }
-
+  //remove existing elements, and new elements from list
   refresh() {
     const paragraphs = document.querySelectorAll('p');
     paragraphs.forEach(paragraph => paragraph.remove());
@@ -32,15 +32,19 @@ class Display {
         console.log(e);
         this.toggleShowTaskButtonState(e);
       });
+      const dueDate = document.createElement('p');
+      dueDate.className = 'dueDate';
+      dueDate.textContent = 'Due: ' + obj.dueDate;
       const deleteButton = document.createElement('button');
       deleteButton.textContent = 'Delete';
       deleteButton.addEventListener('click', (e)=> this.deleteObject(e))
       para.appendChild(addTaskButton);
       para.appendChild(showTasksButton);
       para.appendChild(deleteButton);
+      para.appendChild(dueDate)
     });
   }
-
+    
   addtoList(object) {
     list.list = object;
   }

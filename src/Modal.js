@@ -52,6 +52,7 @@ class Modal {
 
             })
             let dueDateInput = document.createElement('input');
+            dueDateInput.className = 'dueDateInput'
             dueDateInput.placeholder = 'MM/DD/YYYY'
             let dueDateTitle = document.createElement('p')
             dueDateTitle.textContent = 'Due date:'
@@ -133,6 +134,8 @@ class Modal {
         console.log(input)
         let newItem = new ToDoItems();
         newItem.title = input;
+        let dueDateInput = document.querySelector('.dueDateInput').value;
+        newItem.dueDate = dueDateInput
         let display = new Display()
         display.addtoList(newItem)
         display.refresh()
