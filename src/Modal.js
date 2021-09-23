@@ -9,14 +9,15 @@ class Modal {
         this.type = type
     }
 
-
+    //returns modal object 
     make(type, parentText) {
 
         let baseModal = this.base(type, parentText)
 
         return baseModal
     }
-
+    
+    //returns modal based on type arguement
     base(type, parentText) {
         let modal = document.createElement('div');
         modal.textContent = 'Add Task';
@@ -44,7 +45,9 @@ class Modal {
             let saveModalButton = document.createElement('button');
             saveModalButton.classList = 'save';
             saveModalButton.textContent = 'save';
-            saveModalButton.addEventListener('click', Modal.saveModal)
+            saveModalButton.addEventListener('click', function(){
+                Modal.saveModal()
+            })
             modal.appendChild(saveModalButton);
             modal.appendChild(exitModalButton);
             modal.appendChild(modalInput);
