@@ -248,28 +248,28 @@ function toInteger(dirtyNumber) {
 
 /***/ }),
 
-/***/ "./node_modules/date-fns/esm/compareAsc/index.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/date-fns/esm/compareAsc/index.js ***!
-  \*******************************************************/
+/***/ "./node_modules/date-fns/esm/compareDesc/index.js":
+/*!********************************************************!*\
+  !*** ./node_modules/date-fns/esm/compareDesc/index.js ***!
+  \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ compareAsc)
+/* harmony export */   "default": () => (/* binding */ compareDesc)
 /* harmony export */ });
 /* harmony import */ var _toDate_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../toDate/index.js */ "./node_modules/date-fns/esm/toDate/index.js");
 /* harmony import */ var _lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_lib/requiredArgs/index.js */ "./node_modules/date-fns/esm/_lib/requiredArgs/index.js");
 
 
 /**
- * @name compareAsc
+ * @name compareDesc
  * @category Common Helpers
- * @summary Compare the two dates and return -1, 0 or 1.
+ * @summary Compare the two dates reverse chronologically and return -1, 0 or 1.
  *
  * @description
- * Compare the two dates and return 1 if the first date is after the second,
- * -1 if the first date is before the second or 0 if dates are equal.
+ * Compare the two dates and return -1 if the first date is after the second,
+ * 1 if the first date is before the second or 0 if dates are equal.
  *
  * ### v2.0.0 breaking changes:
  *
@@ -281,33 +281,33 @@ __webpack_require__.r(__webpack_exports__);
  * @throws {TypeError} 2 arguments required
  *
  * @example
- * // Compare 11 February 1987 and 10 July 1989:
- * const result = compareAsc(new Date(1987, 1, 11), new Date(1989, 6, 10))
- * //=> -1
+ * // Compare 11 February 1987 and 10 July 1989 reverse chronologically:
+ * const result = compareDesc(new Date(1987, 1, 11), new Date(1989, 6, 10))
+ * //=> 1
  *
  * @example
- * // Sort the array of dates:
+ * // Sort the array of dates in reverse chronological order:
  * const result = [
  *   new Date(1995, 6, 2),
  *   new Date(1987, 1, 11),
  *   new Date(1989, 6, 10)
- * ].sort(compareAsc)
+ * ].sort(compareDesc)
  * //=> [
- * //   Wed Feb 11 1987 00:00:00,
+ * //   Sun Jul 02 1995 00:00:00,
  * //   Mon Jul 10 1989 00:00:00,
- * //   Sun Jul 02 1995 00:00:00
+ * //   Wed Feb 11 1987 00:00:00
  * // ]
  */
 
-function compareAsc(dirtyDateLeft, dirtyDateRight) {
+function compareDesc(dirtyDateLeft, dirtyDateRight) {
   (0,_lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__.default)(2, arguments);
   var dateLeft = (0,_toDate_index_js__WEBPACK_IMPORTED_MODULE_1__.default)(dirtyDateLeft);
   var dateRight = (0,_toDate_index_js__WEBPACK_IMPORTED_MODULE_1__.default)(dirtyDateRight);
   var diff = dateLeft.getTime() - dateRight.getTime();
 
-  if (diff < 0) {
+  if (diff > 0) {
     return -1;
-  } else if (diff > 0) {
+  } else if (diff < 0) {
     return 1; // Return 0 if diff is 0; return NaN if diff is NaN
   } else {
     return diff;
@@ -1141,7 +1141,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _ToDoClasses__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ToDoClasses */ "./src/ToDoClasses.js");
 /* harmony import */ var _Display__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Display */ "./src/Display.js");
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/compareAsc/index.js");
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/compareDesc/index.js");
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/parseISO/index.js");
 
 

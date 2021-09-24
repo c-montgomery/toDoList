@@ -174,7 +174,7 @@ class Modal {
         display.refresh()
     }
     static sortListByDueDate(list){
-        console.log(list.list.sort((a,b)=>compareAsc(parseISO(a.dueDate),parseISO(b.dueDate))))
+        console.log(list.list.sort((a,b)=>compareDesc(parseISO(a.dueDate),parseISO(b.dueDate))))
         let display = new Display()
         display.refresh()
     }
