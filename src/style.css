@@ -244,3 +244,7 @@ width: 100%;
 
   display: inline-block;
 }
+.buttonHolder{
+  display: flex;
+  justify-content: space-evenly;
+}

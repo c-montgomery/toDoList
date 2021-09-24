@@ -30,9 +30,7 @@ class Modal {
 
         let exitModalButton = document.createElement('button');
         exitModalButton.classList = 'exit'
-        exitModalButton.addEventListener('click', Modal.closeModal);
         exitModalButton.textContent = 'X'
-        window.addEventListener('click', ()=>Modal.closeModal)
         if (type == 'toDo') {
             console.log(this)
             window.addEventListener('keypress', function (e) {
@@ -55,13 +53,16 @@ class Modal {
             dueDateInput.className = 'dueDateInput'
             dueDateInput.placeholder = 'yyyy-mm-dd'
             let dueDateTitle = document.createElement('p')
-            dueDateTitle.textContent = 'Due date'
+            dueDateTitle.textContent = 'Due date';
+
+            let priorityPicker = Modal.priorityPicker()
             
            
             modal.appendChild(exitModalButton);
             modal.appendChild(modalInput);
             modal.appendChild(dueDateTitle);
             modal.appendChild(dueDateInput);
+            modal.appendChild(priorityPicker)
             modal.appendChild(saveModalButton);
             let body = document.querySelector('body');
             body.appendChild(modal)
@@ -144,7 +145,30 @@ class Modal {
         Modal.closeModal()
 
     }
+    static priorityPicker(){
+        let div = document.createElement('div')
+        let buttonHolder = document.createElement('div')
+        let low = document.createElement('button')
+        let medium = document.createElement('button')
+        let high = document.createElement('button')
 
+        div.textContent = 'Priority'
+        low.textContent = 'low'
+        medium.textContent = 'medium'
+        high.textContent = 'high'
+
+        div.className = 'priorityTitle'
+        buttonHolder.className = 'buttonHolder'
+
+        buttonHolder.appendChild(low)
+        buttonHolder.appendChild(medium)
+        buttonHolder.appendChild(high)
+        div.appendChild(buttonHolder)
+
+        return div;
+
+
+    }
     saveSubtask(parent) {
         let input = document.querySelector('input').value;
         let newSubtask = new Subtask();
