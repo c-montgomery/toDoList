@@ -1,6 +1,6 @@
 import { Subtask, ToDoItems, ToDoList } from "./ToDoClasses"
-import { Display } from "./Display"
-
+import { Display, list } from "./Display"
+import { compareDesc, compareAsc, parseISO } from 'date-fns'
 
 
 class Modal {
@@ -97,7 +97,7 @@ class Modal {
                     e.stopPropagation()
                 })
                 dueDate.addEventListener('click', (e)=>{
-
+                    Modal.sortListByDueDate(list)
                     Modal.closeModal()
                     e.stopPropagation()
                 })
@@ -170,6 +170,11 @@ class Modal {
     sortListAlphabetically(list) {
         let objectos = document.getElementsByClassName('ToDoItems')
         console.log(list.list.sort((a, b) => a.title > b.title ? 1 : -1))
+        let display = new Display()
+        display.refresh()
+    }
+    static sortListByDueDate(list){
+        console.log(list.list.sort((a,b)=>compareAsc(parseISO(a.dueDate),parseISO(b.dueDate))))
         let display = new Display()
         display.refresh()
     }

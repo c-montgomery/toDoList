@@ -35,7 +35,7 @@ var ___CSS_LOADER_URL_REPLACEMENT_3___ = _node_modules_css_loader_dist_runtime_g
 var ___CSS_LOADER_URL_REPLACEMENT_4___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_3___);
 var ___CSS_LOADER_URL_REPLACEMENT_5___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_4___, { hash: "#AverageSans" });
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n\n* {\n  vertical-align: baseline;\n  font-weight: inherit;\n  font-family: inherit;\n  font-style: inherit;\n  font-size: 100%;\n  border: 0 none;\n  outline: 0;\n  padding: 0;\n  margin: 0;\n  }\n  \n  \n \n  li, dd, blockquote {\n  margin-left: 40px;\n  }\n  table {\n  border-collapse: collapse;\n  border-spacing: 0;\n  }\n\n@font-face {\n  font-family: 'Average Sans';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + "); /* IE9 Compat Modes */\n  src: local(''),\n       url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") format('embedded-opentype'), /* IE6-IE8 */\n       url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ") format('woff2'), /* Super Modern Browsers */\n       url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ") format('woff'), /* Modern Browsers */\n       url(" + ___CSS_LOADER_URL_REPLACEMENT_4___ + ") format('truetype'), /* Safari, Android, iOS */\n       url(" + ___CSS_LOADER_URL_REPLACEMENT_5___ + ") format('svg'); /* Legacy iOS */\n}\n\nhtml{\n  display: flex;\n  flex-direction: column;\n  font-family: 'Average Sans';\n  color: black;\n  background: rgb(91, 104, 103);\n\n  background: linear-gradient(30deg, rgb(105, 121, 120) 0%, hsla(239, 27%, 40%, 0.4) 100%);\n\n  background: -moz-linear-gradient(30deg, rgb(110, 126, 124) 0%, hsla(239, 27%, 40%, 0.4) 100%);\n\n  background: -webkit-linear-gradient(30deg, rgb(122, 141, 139) 0%, hsla(239, 27%, 40%, 0.4) 100%);\n\n  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr=\"#23E8D8\", endColorstr=\"#4A4B82\", GradientType=1 );\n  height: 100%;\n}\nhtml{\n  text-align: right;\n}\n.content{\n  display: inline-block;\n  width: 100%;\n  font-size: 50px;\n  justify-content: space-around;\n  background-color: rgba(0, 0, 0, .2);\n}\n\n\nbutton{\n  font-size: 30px;\n  color:rgb(91, 104, 103);\n  transform: scale(.98);\n  border: none;\n  box-shadow: inset 0px 3px 3px #686C6D;\n  z-index: 1;\n  border-radius: 3px;\n  margin: 5px;\n  transition: transform .3s;\n  height: 40px;\n  padding: 1px;\n\n\n}\nbutton:hover{\n  color: black;\n  transform: scale(.99);\n  border: none;\n  box-shadow: inset 1px 1px 13px #7db7ce;\n  box-shadow: 10px 5px 5px rgb(92, 91, 91);\n  z-index: 21;\n  border-radius: 5px;\n  margin: 5px;\n  transition: transform .3s;\n}\n\nbutton:active{\n  color: white;\n}\n.modal {\n  text-align: center;\n  z-index: 3;\n  font-size: 1.4rem;\n  animation: fadeIn linear .5s;\n  transition:  0.92s;\n  position: absolute;\n  margin: 30vh 30%;\n  width: 60vh;\n  height: 60vh;\n  border: 1px rgb(108, 160, 228) solid;\n  padding: 10px;\n  border-radius: 6px;\n  background-color: rgba(251, 255, 255, 0.7);\n}\n\ndiv.addTasksModal{\n  z-index: 1;\n  min-width: 800px;\n  font-size: 4 rem;\n  animation: fadeIn linear .5s;\n  transition:  0.92s;\n  position: absolute;\n  margin: 80px auto;\n  width: 60vh;\n  height: 60vh;\n  border: 1px rgb(108, 160, 228) solid;\n  padding: 10px;\n  border-radius: 6px;\n  background-color: rgba(251, 255, 255, 0.9);\n}\n\n@keyframes fadeIn {\n  0% {opacity:0;}\n  100% {opacity:1;}\n}\n\nhtml > p{\n\n  border-bottom: black 1px solid;\n  margin: 1px;\n}\ninput{\n  display: block;\n  width: 50vh;\n  margin-bottom: 5px;\n  margin-left: 5px;\n  font-size: 1rem;\n  border-top: 1px solid black;\n}\n\n.taskModalInput{\n  display: block;\n  width: 90%;\n  margin-bottom: 5px;\n  margin-left: 5px;\n  font-size: 1rem;\n  border-top: #686c6d 1px solid;\n}\n\n.darkened{\n  background-color: rgb(0, 0, 0.2)\n}\n\n.saveSubtask{\n  background-color: cornflowerblue;\n  position: absolute;\n  bottom: 0px;\n  right: 0px;\n}\n\n\n.save{\n  font-size: 1.4rem;\n  bottom: 10px;\n  right: 10px;\n  text-align: center;\n  cursor: pointer;\n  padding-right: 10px;\n  padding-left: 10px;\n  border-radius: 3px;\n}\n.save:hover{\n  transform: scale(1.03);\n  background-color: rgb(126, 141, 181);\n  box-shadow: 1px 5px 5px rgb(92, 91, 91);\n}\n\n.exit{\n  position: absolute;\n  font-size: 1rem;\n  \n  top: 0px;\n  right: 0px;\n  \n  text-align: center;\n  cursor: pointer;\n  border-radius: 5px;\n \n}\n\n.exit:hover{\n  transform: scale(1.03);\n  cursor: pointer;\n  background-color: red;\n  color: white;\n  \n}\n\n.hidden{\n  display: block;\n}\n\nli {\n  list-style-type: none;\n}\n.warning{\n  color: red;\n}\n.sortDropdown div{\n\ncolor: black;\nbackground-color: rgb(210, 210, 210);\nwidth: 40%;\n\n\n\n}\n.sortDropdown{\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  justify-content: center;\n  align-items: center;\n  text-align: center;\n}\n.sortButton{\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n}\n.dueDate{\n  display: inline-block;\n}", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"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","sourcesContent":["\n\n* {\n  vertical-align: baseline;\n  font-weight: inherit;\n  font-family: inherit;\n  font-style: inherit;\n  font-size: 100%;\n  border: 0 none;\n  outline: 0;\n  padding: 0;\n  margin: 0;\n  }\n  \n  \n \n  li, dd, blockquote {\n  margin-left: 40px;\n  }\n  table {\n  border-collapse: collapse;\n  border-spacing: 0;\n  }\n\n@font-face {\n  font-family: 'Average Sans';\n  font-style: normal;\n  font-weight: 400;\n  src: url('../fonts/average-sans-v9-latin-regular.eot'); /* IE9 Compat Modes */\n  src: local(''),\n       url('../fonts/average-sans-v9-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */\n       url('../fonts/average-sans-v9-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */\n       url('../fonts/average-sans-v9-latin-regular.woff') format('woff'), /* Modern Browsers */\n       url('../fonts/average-sans-v9-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */\n       url('../fonts/average-sans-v9-latin-regular.svg#AverageSans') format('svg'); /* Legacy iOS */\n}\n\nhtml{\n  display: flex;\n  flex-direction: column;\n  font-family: 'Average Sans';\n  color: black;\n  background: rgb(91, 104, 103);\n\n  background: linear-gradient(30deg, rgb(105, 121, 120) 0%, hsla(239, 27%, 40%, 0.4) 100%);\n\n  background: -moz-linear-gradient(30deg, rgb(110, 126, 124) 0%, hsla(239, 27%, 40%, 0.4) 100%);\n\n  background: -webkit-linear-gradient(30deg, rgb(122, 141, 139) 0%, hsla(239, 27%, 40%, 0.4) 100%);\n\n  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr=\"#23E8D8\", endColorstr=\"#4A4B82\", GradientType=1 );\n  height: 100%;\n}\nhtml{\n  text-align: right;\n}\n.content{\n  display: inline-block;\n  width: 100%;\n  font-size: 50px;\n  justify-content: space-around;\n  background-color: rgba(0, 0, 0, .2);\n}\n\n\nbutton{\n  font-size: 30px;\n  color:rgb(91, 104, 103);\n  transform: scale(.98);\n  border: none;\n  box-shadow: inset 0px 3px 3px #686C6D;\n  z-index: 1;\n  border-radius: 3px;\n  margin: 5px;\n  transition: transform .3s;\n  height: 40px;\n  padding: 1px;\n\n\n}\nbutton:hover{\n  color: black;\n  transform: scale(.99);\n  border: none;\n  box-shadow: inset 1px 1px 13px #7db7ce;\n  box-shadow: 10px 5px 5px rgb(92, 91, 91);\n  z-index: 21;\n  border-radius: 5px;\n  margin: 5px;\n  transition: transform .3s;\n}\n\nbutton:active{\n  color: white;\n}\n.modal {\n  text-align: center;\n  z-index: 3;\n  font-size: 1.4rem;\n  animation: fadeIn linear .5s;\n  transition:  0.92s;\n  position: absolute;\n  margin: 30vh 30%;\n  width: 60vh;\n  height: 60vh;\n  border: 1px rgb(108, 160, 228) solid;\n  padding: 10px;\n  border-radius: 6px;\n  background-color: rgba(251, 255, 255, 0.7);\n}\n\ndiv.addTasksModal{\n  z-index: 1;\n  min-width: 800px;\n  font-size: 4 rem;\n  animation: fadeIn linear .5s;\n  transition:  0.92s;\n  position: absolute;\n  margin: 80px auto;\n  width: 60vh;\n  height: 60vh;\n  border: 1px rgb(108, 160, 228) solid;\n  padding: 10px;\n  border-radius: 6px;\n  background-color: rgba(251, 255, 255, 0.9);\n}\n\n@keyframes fadeIn {\n  0% {opacity:0;}\n  100% {opacity:1;}\n}\n\nhtml > p{\n\n  border-bottom: black 1px solid;\n  margin: 1px;\n}\ninput{\n  display: block;\n  width: 50vh;\n  margin-bottom: 5px;\n  margin-left: 5px;\n  font-size: 1rem;\n  border-top: 1px solid black;\n}\n\n.taskModalInput{\n  display: block;\n  width: 90%;\n  margin-bottom: 5px;\n  margin-left: 5px;\n  font-size: 1rem;\n  border-top: #686c6d 1px solid;\n}\n\n.darkened{\n  background-color: rgb(0, 0, 0.2)\n}\n\n.saveSubtask{\n  background-color: cornflowerblue;\n  position: absolute;\n  bottom: 0px;\n  right: 0px;\n}\n\n\n.save{\n  font-size: 1.4rem;\n  bottom: 10px;\n  right: 10px;\n  text-align: center;\n  cursor: pointer;\n  padding-right: 10px;\n  padding-left: 10px;\n  border-radius: 3px;\n}\n.save:hover{\n  transform: scale(1.03);\n  background-color: rgb(126, 141, 181);\n  box-shadow: 1px 5px 5px rgb(92, 91, 91);\n}\n\n.exit{\n  position: absolute;\n  font-size: 1rem;\n  \n  top: 0px;\n  right: 0px;\n  \n  text-align: center;\n  cursor: pointer;\n  border-radius: 5px;\n \n}\n\n.exit:hover{\n  transform: scale(1.03);\n  cursor: pointer;\n  background-color: red;\n  color: white;\n  \n}\n\n.hidden{\n  display: block;\n}\n\nli {\n  list-style-type: none;\n}\n.warning{\n  color: red;\n}\n.sortDropdown div{\n\ncolor: black;\nbackground-color: rgb(210, 210, 210);\nwidth: 40%;\n\n\n\n}\n.sortDropdown{\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  justify-content: center;\n  align-items: center;\n  text-align: center;\n}\n.sortButton{\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n}\n.dueDate{\n  display: inline-block;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n\n* {\n  vertical-align: baseline;\n  font-weight: inherit;\n  font-family: inherit;\n  font-style: inherit;\n  font-size: 100%;\n  border: 0 none;\n  outline: 0;\n  padding: 0;\n  margin: 0;\n  }\n  \n  \n \n  li, dd, blockquote {\n  margin-left: 40px;\n  }\n  table {\n  border-collapse: collapse;\n  border-spacing: 0;\n  }\n\n@font-face {\n  font-family: 'Average Sans';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + "); /* IE9 Compat Modes */\n  src: local(''),\n       url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") format('embedded-opentype'), /* IE6-IE8 */\n       url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ") format('woff2'), /* Super Modern Browsers */\n       url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ") format('woff'), /* Modern Browsers */\n       url(" + ___CSS_LOADER_URL_REPLACEMENT_4___ + ") format('truetype'), /* Safari, Android, iOS */\n       url(" + ___CSS_LOADER_URL_REPLACEMENT_5___ + ") format('svg'); /* Legacy iOS */\n}\n\nhtml{\n  display: flex;\n  flex-direction: column;\n  font-family: 'Average Sans';\n  color: black;\n  background: rgb(91, 104, 103);\n\n  background: linear-gradient(30deg, rgb(105, 121, 120) 0%, hsla(239, 27%, 40%, 0.4) 100%);\n\n  background: -moz-linear-gradient(30deg, rgb(110, 126, 124) 0%, hsla(239, 27%, 40%, 0.4) 100%);\n\n  background: -webkit-linear-gradient(30deg, rgb(122, 141, 139) 0%, hsla(239, 27%, 40%, 0.4) 100%);\n\n  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr=\"#23E8D8\", endColorstr=\"#4A4B82\", GradientType=1 );\n  height: 100%;\n}\nhtml{\n  text-align: right;\n}\n.content{\n  display: inline-block;\n  width: 100%;\n  font-size: 50px;\n  justify-content: space-around;\n  background-color: rgba(0, 0, 0, .2);\n}\n\n\nbutton{\n  font-size: 30px;\n  color:rgb(91, 104, 103);\n  transform: scale(.98);\n  border: none;\n  box-shadow: inset 0px 3px 3px #686C6D;\n  z-index: 1;\n  border-radius: 3px;\n  margin: 5px;\n  transition: transform .3s;\n  height: 40px;\n  padding: 1px;\n\n\n}\nbutton:hover{\n  color: black;\n  transform: scale(.99);\n  border: none;\n  box-shadow: inset 1px 1px 13px #7db7ce;\n  box-shadow: 10px 5px 5px rgb(92, 91, 91);\n  z-index: 21;\n  border-radius: 5px;\n  margin: 5px;\n  transition: transform .3s;\n}\n\nbutton:active{\n  color: white;\n}\n.modal {\n  text-align: center;\n  z-index: 3;\n  font-size: 1.4rem;\n  animation: fadeIn linear .5s;\n  transition:  0.92s;\n  position: absolute;\n  margin: 30vh 30%;\n  width: 60vh;\n  height: 60vh;\n  border: 1px rgb(108, 160, 228) solid;\n  padding: 10px;\n  border-radius: 6px;\n  background-color: rgba(251, 255, 255, 0.7);\n}\n\ndiv.addTasksModal{\n  z-index: 1;\n  min-width: 800px;\n  font-size: 4 rem;\n  animation: fadeIn linear .5s;\n  transition:  0.92s;\n  position: absolute;\n  margin: 80px auto;\n  width: 60vh;\n  height: 60vh;\n  border: 1px rgb(108, 160, 228) solid;\n  padding: 10px;\n  border-radius: 6px;\n  background-color: rgba(251, 255, 255, 0.9);\n}\n\n@keyframes fadeIn {\n  0% {opacity:0;}\n  100% {opacity:1;}\n}\n\nhtml > p{\n\n  border-bottom: black 1px solid;\n  margin: 1px;\n}\ninput{\n  display: block;\n  width: 50vh;\n  margin-bottom: 5px;\n  margin-left: 5px;\n  font-size: 1rem;\n  border-top: 1px solid black;\n}\n\n.taskModalInput{\n  display: block;\n  width: 90%;\n  margin-bottom: 5px;\n  margin-left: 5px;\n  font-size: 1rem;\n  border-top: #686c6d 1px solid;\n}\n\n.darkened{\n  background-color: rgb(0, 0, 0.2)\n}\n\n.saveSubtask{\n  background-color: cornflowerblue;\n  position: absolute;\n  bottom: 0px;\n  right: 0px;\n}\n\n\n.save{\n  font-size: 1.4rem;\n  bottom: 10px;\n  right: 10px;\n  text-align: center;\n  cursor: pointer;\n  padding-right: 10px;\n  padding-left: 10px;\n  border-radius: 3px;\n}\n.save:hover{\n  transform: scale(1.03);\n  background-color: rgb(126, 141, 181);\n  box-shadow: 1px 5px 5px rgb(92, 91, 91);\n}\n\n.exit{\n  position: absolute;\n  font-size: 1rem;\n  \n  top: 0px;\n  right: 0px;\n  \n  text-align: center;\n  cursor: pointer;\n  border-radius: 5px;\n \n}\n\n.exit:hover{\n  transform: scale(1.03);\n  cursor: pointer;\n  background-color: red;\n  color: white;\n  \n}\n\n.hidden{\n  display: block;\n}\n\nli {\n  list-style-type: none;\n}\n.warning{\n  color: red;\n}\n.sortDropdown div{\n\ntransition: width .3s, background-color .3s, font-size 1s, transform 2s;\ncolor: black;\nbackground-color: rgb(210, 210, 210);\nwidth: 40%;\n}\n.sortDropdown div:hover{\n  width: 42%;\n  background-color: #8d9091;\n  cursor: default;\n  font-size: 1.1rem;\n}\n\n.sortDropdown{\n\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  justify-content: center;\n  align-items: center;\n  text-align: center;\n}\n\n.dueDate{\n\n  display: inline-block;\n}", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"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","sourcesContent":["\n\n* {\n  vertical-align: baseline;\n  font-weight: inherit;\n  font-family: inherit;\n  font-style: inherit;\n  font-size: 100%;\n  border: 0 none;\n  outline: 0;\n  padding: 0;\n  margin: 0;\n  }\n  \n  \n \n  li, dd, blockquote {\n  margin-left: 40px;\n  }\n  table {\n  border-collapse: collapse;\n  border-spacing: 0;\n  }\n\n@font-face {\n  font-family: 'Average Sans';\n  font-style: normal;\n  font-weight: 400;\n  src: url('../fonts/average-sans-v9-latin-regular.eot'); /* IE9 Compat Modes */\n  src: local(''),\n       url('../fonts/average-sans-v9-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */\n       url('../fonts/average-sans-v9-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */\n       url('../fonts/average-sans-v9-latin-regular.woff') format('woff'), /* Modern Browsers */\n       url('../fonts/average-sans-v9-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */\n       url('../fonts/average-sans-v9-latin-regular.svg#AverageSans') format('svg'); /* Legacy iOS */\n}\n\nhtml{\n  display: flex;\n  flex-direction: column;\n  font-family: 'Average Sans';\n  color: black;\n  background: rgb(91, 104, 103);\n\n  background: linear-gradient(30deg, rgb(105, 121, 120) 0%, hsla(239, 27%, 40%, 0.4) 100%);\n\n  background: -moz-linear-gradient(30deg, rgb(110, 126, 124) 0%, hsla(239, 27%, 40%, 0.4) 100%);\n\n  background: -webkit-linear-gradient(30deg, rgb(122, 141, 139) 0%, hsla(239, 27%, 40%, 0.4) 100%);\n\n  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr=\"#23E8D8\", endColorstr=\"#4A4B82\", GradientType=1 );\n  height: 100%;\n}\nhtml{\n  text-align: right;\n}\n.content{\n  display: inline-block;\n  width: 100%;\n  font-size: 50px;\n  justify-content: space-around;\n  background-color: rgba(0, 0, 0, .2);\n}\n\n\nbutton{\n  font-size: 30px;\n  color:rgb(91, 104, 103);\n  transform: scale(.98);\n  border: none;\n  box-shadow: inset 0px 3px 3px #686C6D;\n  z-index: 1;\n  border-radius: 3px;\n  margin: 5px;\n  transition: transform .3s;\n  height: 40px;\n  padding: 1px;\n\n\n}\nbutton:hover{\n  color: black;\n  transform: scale(.99);\n  border: none;\n  box-shadow: inset 1px 1px 13px #7db7ce;\n  box-shadow: 10px 5px 5px rgb(92, 91, 91);\n  z-index: 21;\n  border-radius: 5px;\n  margin: 5px;\n  transition: transform .3s;\n}\n\nbutton:active{\n  color: white;\n}\n.modal {\n  text-align: center;\n  z-index: 3;\n  font-size: 1.4rem;\n  animation: fadeIn linear .5s;\n  transition:  0.92s;\n  position: absolute;\n  margin: 30vh 30%;\n  width: 60vh;\n  height: 60vh;\n  border: 1px rgb(108, 160, 228) solid;\n  padding: 10px;\n  border-radius: 6px;\n  background-color: rgba(251, 255, 255, 0.7);\n}\n\ndiv.addTasksModal{\n  z-index: 1;\n  min-width: 800px;\n  font-size: 4 rem;\n  animation: fadeIn linear .5s;\n  transition:  0.92s;\n  position: absolute;\n  margin: 80px auto;\n  width: 60vh;\n  height: 60vh;\n  border: 1px rgb(108, 160, 228) solid;\n  padding: 10px;\n  border-radius: 6px;\n  background-color: rgba(251, 255, 255, 0.9);\n}\n\n@keyframes fadeIn {\n  0% {opacity:0;}\n  100% {opacity:1;}\n}\n\nhtml > p{\n\n  border-bottom: black 1px solid;\n  margin: 1px;\n}\ninput{\n  display: block;\n  width: 50vh;\n  margin-bottom: 5px;\n  margin-left: 5px;\n  font-size: 1rem;\n  border-top: 1px solid black;\n}\n\n.taskModalInput{\n  display: block;\n  width: 90%;\n  margin-bottom: 5px;\n  margin-left: 5px;\n  font-size: 1rem;\n  border-top: #686c6d 1px solid;\n}\n\n.darkened{\n  background-color: rgb(0, 0, 0.2)\n}\n\n.saveSubtask{\n  background-color: cornflowerblue;\n  position: absolute;\n  bottom: 0px;\n  right: 0px;\n}\n\n\n.save{\n  font-size: 1.4rem;\n  bottom: 10px;\n  right: 10px;\n  text-align: center;\n  cursor: pointer;\n  padding-right: 10px;\n  padding-left: 10px;\n  border-radius: 3px;\n}\n.save:hover{\n  transform: scale(1.03);\n  background-color: rgb(126, 141, 181);\n  box-shadow: 1px 5px 5px rgb(92, 91, 91);\n}\n\n.exit{\n  position: absolute;\n  font-size: 1rem;\n  \n  top: 0px;\n  right: 0px;\n  \n  text-align: center;\n  cursor: pointer;\n  border-radius: 5px;\n \n}\n\n.exit:hover{\n  transform: scale(1.03);\n  cursor: pointer;\n  background-color: red;\n  color: white;\n  \n}\n\n.hidden{\n  display: block;\n}\n\nli {\n  list-style-type: none;\n}\n.warning{\n  color: red;\n}\n.sortDropdown div{\n\ntransition: width .3s, background-color .3s, font-size 1s, transform 2s;\ncolor: black;\nbackground-color: rgb(210, 210, 210);\nwidth: 40%;\n}\n.sortDropdown div:hover{\n  width: 42%;\n  background-color: #8d9091;\n  cursor: default;\n  font-size: 1.1rem;\n}\n\n.sortDropdown{\n\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n  justify-content: center;\n  align-items: center;\n  text-align: center;\n}\n\n.dueDate{\n\n  display: inline-block;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -201,6 +201,490 @@ module.exports = function (url, options) {
 
   return url;
 };
+
+/***/ }),
+
+/***/ "./node_modules/date-fns/esm/_lib/requiredArgs/index.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/date-fns/esm/_lib/requiredArgs/index.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ requiredArgs)
+/* harmony export */ });
+function requiredArgs(required, args) {
+  if (args.length < required) {
+    throw new TypeError(required + ' argument' + (required > 1 ? 's' : '') + ' required, but only ' + args.length + ' present');
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/date-fns/esm/_lib/toInteger/index.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/date-fns/esm/_lib/toInteger/index.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ toInteger)
+/* harmony export */ });
+function toInteger(dirtyNumber) {
+  if (dirtyNumber === null || dirtyNumber === true || dirtyNumber === false) {
+    return NaN;
+  }
+
+  var number = Number(dirtyNumber);
+
+  if (isNaN(number)) {
+    return number;
+  }
+
+  return number < 0 ? Math.ceil(number) : Math.floor(number);
+}
+
+/***/ }),
+
+/***/ "./node_modules/date-fns/esm/compareAsc/index.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/date-fns/esm/compareAsc/index.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ compareAsc)
+/* harmony export */ });
+/* harmony import */ var _toDate_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../toDate/index.js */ "./node_modules/date-fns/esm/toDate/index.js");
+/* harmony import */ var _lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_lib/requiredArgs/index.js */ "./node_modules/date-fns/esm/_lib/requiredArgs/index.js");
+
+
+/**
+ * @name compareAsc
+ * @category Common Helpers
+ * @summary Compare the two dates and return -1, 0 or 1.
+ *
+ * @description
+ * Compare the two dates and return 1 if the first date is after the second,
+ * -1 if the first date is before the second or 0 if dates are equal.
+ *
+ * ### v2.0.0 breaking changes:
+ *
+ * - [Changes that are common for the whole library](https://github.com/date-fns/date-fns/blob/master/docs/upgradeGuide.md#Common-Changes).
+ *
+ * @param {Date|Number} dateLeft - the first date to compare
+ * @param {Date|Number} dateRight - the second date to compare
+ * @returns {Number} the result of the comparison
+ * @throws {TypeError} 2 arguments required
+ *
+ * @example
+ * // Compare 11 February 1987 and 10 July 1989:
+ * const result = compareAsc(new Date(1987, 1, 11), new Date(1989, 6, 10))
+ * //=> -1
+ *
+ * @example
+ * // Sort the array of dates:
+ * const result = [
+ *   new Date(1995, 6, 2),
+ *   new Date(1987, 1, 11),
+ *   new Date(1989, 6, 10)
+ * ].sort(compareAsc)
+ * //=> [
+ * //   Wed Feb 11 1987 00:00:00,
+ * //   Mon Jul 10 1989 00:00:00,
+ * //   Sun Jul 02 1995 00:00:00
+ * // ]
+ */
+
+function compareAsc(dirtyDateLeft, dirtyDateRight) {
+  (0,_lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__.default)(2, arguments);
+  var dateLeft = (0,_toDate_index_js__WEBPACK_IMPORTED_MODULE_1__.default)(dirtyDateLeft);
+  var dateRight = (0,_toDate_index_js__WEBPACK_IMPORTED_MODULE_1__.default)(dirtyDateRight);
+  var diff = dateLeft.getTime() - dateRight.getTime();
+
+  if (diff < 0) {
+    return -1;
+  } else if (diff > 0) {
+    return 1; // Return 0 if diff is 0; return NaN if diff is NaN
+  } else {
+    return diff;
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/date-fns/esm/parseISO/index.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/date-fns/esm/parseISO/index.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ parseISO)
+/* harmony export */ });
+/* harmony import */ var _lib_toInteger_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_lib/toInteger/index.js */ "./node_modules/date-fns/esm/_lib/toInteger/index.js");
+/* harmony import */ var _lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_lib/requiredArgs/index.js */ "./node_modules/date-fns/esm/_lib/requiredArgs/index.js");
+
+
+var MILLISECONDS_IN_HOUR = 3600000;
+var MILLISECONDS_IN_MINUTE = 60000;
+var DEFAULT_ADDITIONAL_DIGITS = 2;
+var patterns = {
+  dateTimeDelimiter: /[T ]/,
+  timeZoneDelimiter: /[Z ]/i,
+  timezone: /([Z+-].*)$/
+};
+var dateRegex = /^-?(?:(\d{3})|(\d{2})(?:-?(\d{2}))?|W(\d{2})(?:-?(\d{1}))?|)$/;
+var timeRegex = /^(\d{2}(?:[.,]\d*)?)(?::?(\d{2}(?:[.,]\d*)?))?(?::?(\d{2}(?:[.,]\d*)?))?$/;
+var timezoneRegex = /^([+-])(\d{2})(?::?(\d{2}))?$/;
+/**
+ * @name parseISO
+ * @category Common Helpers
+ * @summary Parse ISO string
+ *
+ * @description
+ * Parse the given string in ISO 8601 format and return an instance of Date.
+ *
+ * Function accepts complete ISO 8601 formats as well as partial implementations.
+ * ISO 8601: http://en.wikipedia.org/wiki/ISO_8601
+ *
+ * If the argument isn't a string, the function cannot parse the string or
+ * the values are invalid, it returns Invalid Date.
+ *
+ * ### v2.0.0 breaking changes:
+ *
+ * - [Changes that are common for the whole library](https://github.com/date-fns/date-fns/blob/master/docs/upgradeGuide.md#Common-Changes).
+ *
+ * - The previous `parse` implementation was renamed to `parseISO`.
+ *
+ *   ```javascript
+ *   // Before v2.0.0
+ *   parse('2016-01-01')
+ *
+ *   // v2.0.0 onward
+ *   parseISO('2016-01-01')
+ *   ```
+ *
+ * - `parseISO` now validates separate date and time values in ISO-8601 strings
+ *   and returns `Invalid Date` if the date is invalid.
+ *
+ *   ```javascript
+ *   parseISO('2018-13-32')
+ *   //=> Invalid Date
+ *   ```
+ *
+ * - `parseISO` now doesn't fall back to `new Date` constructor
+ *   if it fails to parse a string argument. Instead, it returns `Invalid Date`.
+ *
+ * @param {String} argument - the value to convert
+ * @param {Object} [options] - an object with options.
+ * @param {0|1|2} [options.additionalDigits=2] - the additional number of digits in the extended year format
+ * @returns {Date} the parsed date in the local time zone
+ * @throws {TypeError} 1 argument required
+ * @throws {RangeError} `options.additionalDigits` must be 0, 1 or 2
+ *
+ * @example
+ * // Convert string '2014-02-11T11:30:30' to date:
+ * var result = parseISO('2014-02-11T11:30:30')
+ * //=> Tue Feb 11 2014 11:30:30
+ *
+ * @example
+ * // Convert string '+02014101' to date,
+ * // if the additional number of digits in the extended year format is 1:
+ * var result = parseISO('+02014101', { additionalDigits: 1 })
+ * //=> Fri Apr 11 2014 00:00:00
+ */
+
+function parseISO(argument, dirtyOptions) {
+  (0,_lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__.default)(1, arguments);
+  var options = dirtyOptions || {};
+  var additionalDigits = options.additionalDigits == null ? DEFAULT_ADDITIONAL_DIGITS : (0,_lib_toInteger_index_js__WEBPACK_IMPORTED_MODULE_1__.default)(options.additionalDigits);
+
+  if (additionalDigits !== 2 && additionalDigits !== 1 && additionalDigits !== 0) {
+    throw new RangeError('additionalDigits must be 0, 1 or 2');
+  }
+
+  if (!(typeof argument === 'string' || Object.prototype.toString.call(argument) === '[object String]')) {
+    return new Date(NaN);
+  }
+
+  var dateStrings = splitDateString(argument);
+  var date;
+
+  if (dateStrings.date) {
+    var parseYearResult = parseYear(dateStrings.date, additionalDigits);
+    date = parseDate(parseYearResult.restDateString, parseYearResult.year);
+  }
+
+  if (isNaN(date) || !date) {
+    return new Date(NaN);
+  }
+
+  var timestamp = date.getTime();
+  var time = 0;
+  var offset;
+
+  if (dateStrings.time) {
+    time = parseTime(dateStrings.time);
+
+    if (isNaN(time) || time === null) {
+      return new Date(NaN);
+    }
+  }
+
+  if (dateStrings.timezone) {
+    offset = parseTimezone(dateStrings.timezone);
+
+    if (isNaN(offset)) {
+      return new Date(NaN);
+    }
+  } else {
+    var dirtyDate = new Date(timestamp + time); // js parsed string assuming it's in UTC timezone
+    // but we need it to be parsed in our timezone
+    // so we use utc values to build date in our timezone.
+    // Year values from 0 to 99 map to the years 1900 to 1999
+    // so set year explicitly with setFullYear.
+
+    var result = new Date(0);
+    result.setFullYear(dirtyDate.getUTCFullYear(), dirtyDate.getUTCMonth(), dirtyDate.getUTCDate());
+    result.setHours(dirtyDate.getUTCHours(), dirtyDate.getUTCMinutes(), dirtyDate.getUTCSeconds(), dirtyDate.getUTCMilliseconds());
+    return result;
+  }
+
+  return new Date(timestamp + time + offset);
+}
+
+function splitDateString(dateString) {
+  var dateStrings = {};
+  var array = dateString.split(patterns.dateTimeDelimiter);
+  var timeString; // The regex match should only return at maximum two array elements.
+  // [date], [time], or [date, time].
+
+  if (array.length > 2) {
+    return dateStrings;
+  }
+
+  if (/:/.test(array[0])) {
+    dateStrings.date = null;
+    timeString = array[0];
+  } else {
+    dateStrings.date = array[0];
+    timeString = array[1];
+
+    if (patterns.timeZoneDelimiter.test(dateStrings.date)) {
+      dateStrings.date = dateString.split(patterns.timeZoneDelimiter)[0];
+      timeString = dateString.substr(dateStrings.date.length, dateString.length);
+    }
+  }
+
+  if (timeString) {
+    var token = patterns.timezone.exec(timeString);
+
+    if (token) {
+      dateStrings.time = timeString.replace(token[1], '');
+      dateStrings.timezone = token[1];
+    } else {
+      dateStrings.time = timeString;
+    }
+  }
+
+  return dateStrings;
+}
+
+function parseYear(dateString, additionalDigits) {
+  var regex = new RegExp('^(?:(\\d{4}|[+-]\\d{' + (4 + additionalDigits) + '})|(\\d{2}|[+-]\\d{' + (2 + additionalDigits) + '})$)');
+  var captures = dateString.match(regex); // Invalid ISO-formatted year
+
+  if (!captures) return {
+    year: null
+  };
+  var year = captures[1] && parseInt(captures[1]);
+  var century = captures[2] && parseInt(captures[2]);
+  return {
+    year: century == null ? year : century * 100,
+    restDateString: dateString.slice((captures[1] || captures[2]).length)
+  };
+}
+
+function parseDate(dateString, year) {
+  // Invalid ISO-formatted year
+  if (year === null) return null;
+  var captures = dateString.match(dateRegex); // Invalid ISO-formatted string
+
+  if (!captures) return null;
+  var isWeekDate = !!captures[4];
+  var dayOfYear = parseDateUnit(captures[1]);
+  var month = parseDateUnit(captures[2]) - 1;
+  var day = parseDateUnit(captures[3]);
+  var week = parseDateUnit(captures[4]);
+  var dayOfWeek = parseDateUnit(captures[5]) - 1;
+
+  if (isWeekDate) {
+    if (!validateWeekDate(year, week, dayOfWeek)) {
+      return new Date(NaN);
+    }
+
+    return dayOfISOWeekYear(year, week, dayOfWeek);
+  } else {
+    var date = new Date(0);
+
+    if (!validateDate(year, month, day) || !validateDayOfYearDate(year, dayOfYear)) {
+      return new Date(NaN);
+    }
+
+    date.setUTCFullYear(year, month, Math.max(dayOfYear, day));
+    return date;
+  }
+}
+
+function parseDateUnit(value) {
+  return value ? parseInt(value) : 1;
+}
+
+function parseTime(timeString) {
+  var captures = timeString.match(timeRegex);
+  if (!captures) return null; // Invalid ISO-formatted time
+
+  var hours = parseTimeUnit(captures[1]);
+  var minutes = parseTimeUnit(captures[2]);
+  var seconds = parseTimeUnit(captures[3]);
+
+  if (!validateTime(hours, minutes, seconds)) {
+    return NaN;
+  }
+
+  return hours * MILLISECONDS_IN_HOUR + minutes * MILLISECONDS_IN_MINUTE + seconds * 1000;
+}
+
+function parseTimeUnit(value) {
+  return value && parseFloat(value.replace(',', '.')) || 0;
+}
+
+function parseTimezone(timezoneString) {
+  if (timezoneString === 'Z') return 0;
+  var captures = timezoneString.match(timezoneRegex);
+  if (!captures) return 0;
+  var sign = captures[1] === '+' ? -1 : 1;
+  var hours = parseInt(captures[2]);
+  var minutes = captures[3] && parseInt(captures[3]) || 0;
+
+  if (!validateTimezone(hours, minutes)) {
+    return NaN;
+  }
+
+  return sign * (hours * MILLISECONDS_IN_HOUR + minutes * MILLISECONDS_IN_MINUTE);
+}
+
+function dayOfISOWeekYear(isoWeekYear, week, day) {
+  var date = new Date(0);
+  date.setUTCFullYear(isoWeekYear, 0, 4);
+  var fourthOfJanuaryDay = date.getUTCDay() || 7;
+  var diff = (week - 1) * 7 + day + 1 - fourthOfJanuaryDay;
+  date.setUTCDate(date.getUTCDate() + diff);
+  return date;
+} // Validation functions
+// February is null to handle the leap year (using ||)
+
+
+var daysInMonths = [31, null, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+function isLeapYearIndex(year) {
+  return year % 400 === 0 || year % 4 === 0 && year % 100;
+}
+
+function validateDate(year, month, date) {
+  return month >= 0 && month <= 11 && date >= 1 && date <= (daysInMonths[month] || (isLeapYearIndex(year) ? 29 : 28));
+}
+
+function validateDayOfYearDate(year, dayOfYear) {
+  return dayOfYear >= 1 && dayOfYear <= (isLeapYearIndex(year) ? 366 : 365);
+}
+
+function validateWeekDate(_year, week, day) {
+  return week >= 1 && week <= 53 && day >= 0 && day <= 6;
+}
+
+function validateTime(hours, minutes, seconds) {
+  if (hours === 24) {
+    return minutes === 0 && seconds === 0;
+  }
+
+  return seconds >= 0 && seconds < 60 && minutes >= 0 && minutes < 60 && hours >= 0 && hours < 25;
+}
+
+function validateTimezone(_hours, minutes) {
+  return minutes >= 0 && minutes <= 59;
+}
+
+/***/ }),
+
+/***/ "./node_modules/date-fns/esm/toDate/index.js":
+/*!***************************************************!*\
+  !*** ./node_modules/date-fns/esm/toDate/index.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ toDate)
+/* harmony export */ });
+/* harmony import */ var _lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_lib/requiredArgs/index.js */ "./node_modules/date-fns/esm/_lib/requiredArgs/index.js");
+
+/**
+ * @name toDate
+ * @category Common Helpers
+ * @summary Convert the given argument to an instance of Date.
+ *
+ * @description
+ * Convert the given argument to an instance of Date.
+ *
+ * If the argument is an instance of Date, the function returns its clone.
+ *
+ * If the argument is a number, it is treated as a timestamp.
+ *
+ * If the argument is none of the above, the function returns Invalid Date.
+ *
+ * **Note**: *all* Date arguments passed to any *date-fns* function is processed by `toDate`.
+ *
+ * @param {Date|Number} argument - the value to convert
+ * @returns {Date} the parsed date in the local time zone
+ * @throws {TypeError} 1 argument required
+ *
+ * @example
+ * // Clone the date:
+ * const result = toDate(new Date(2014, 1, 11, 11, 30, 30))
+ * //=> Tue Feb 11 2014 11:30:30
+ *
+ * @example
+ * // Convert the timestamp to date:
+ * const result = toDate(1392098430000)
+ * //=> Tue Feb 11 2014 11:30:30
+ */
+
+function toDate(argument) {
+  (0,_lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__.default)(1, arguments);
+  var argStr = Object.prototype.toString.call(argument); // Clone the date
+
+  if (argument instanceof Date || typeof argument === 'object' && argStr === '[object Date]') {
+    // Prevent the date to lose the milliseconds when passed to new Date() in IE10
+    return new Date(argument.getTime());
+  } else if (typeof argument === 'number' || argStr === '[object Number]') {
+    return new Date(argument);
+  } else {
+    if ((typeof argument === 'string' || argStr === '[object String]') && typeof console !== 'undefined') {
+      // eslint-disable-next-line no-console
+      console.warn("Starting with v2.0.0-beta.1 date-fns doesn't accept strings as date arguments. Please use `parseISO` to parse strings. See: https://git.io/fjule"); // eslint-disable-next-line no-console
+
+      console.warn(new Error().stack);
+    }
+
+    return new Date(NaN);
+  }
+}
 
 /***/ }),
 
@@ -657,6 +1141,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _ToDoClasses__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ToDoClasses */ "./src/ToDoClasses.js");
 /* harmony import */ var _Display__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Display */ "./src/Display.js");
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/compareAsc/index.js");
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/parseISO/index.js");
 
 
 
@@ -756,7 +1242,7 @@ class Modal {
                     e.stopPropagation()
                 })
                 dueDate.addEventListener('click', (e)=>{
-
+                    Modal.sortListByDueDate(_Display__WEBPACK_IMPORTED_MODULE_1__.list)
                     Modal.closeModal()
                     e.stopPropagation()
                 })
@@ -829,6 +1315,11 @@ class Modal {
     sortListAlphabetically(list) {
         let objectos = document.getElementsByClassName('ToDoItems')
         console.log(list.list.sort((a, b) => a.title > b.title ? 1 : -1))
+        let display = new _Display__WEBPACK_IMPORTED_MODULE_1__.Display()
+        display.refresh()
+    }
+    static sortListByDueDate(list){
+        console.log(list.list.sort((a,b)=>(0,date_fns__WEBPACK_IMPORTED_MODULE_2__.default)((0,date_fns__WEBPACK_IMPORTED_MODULE_3__.default)(a.dueDate),(0,date_fns__WEBPACK_IMPORTED_MODULE_3__.default)(b.dueDate))))
         let display = new _Display__WEBPACK_IMPORTED_MODULE_1__.Display()
         display.refresh()
     }

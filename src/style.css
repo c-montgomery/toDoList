@@ -214,14 +214,20 @@ li {
 }
 .sortDropdown div{
 
+transition: width .3s, background-color .3s, font-size 1s, transform 2s;
 color: black;
 background-color: rgb(210, 210, 210);
 width: 40%;
-
-
-
 }
+.sortDropdown div:hover{
+  width: 42%;
+  background-color: #8d9091;
+  cursor: default;
+  font-size: 1.1rem;
+}
+
 .sortDropdown{
+
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -229,11 +235,8 @@ width: 40%;
   align-items: center;
   text-align: center;
 }
-.sortButton{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
+
 .dueDate{
+
   display: inline-block;
 }
