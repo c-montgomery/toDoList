@@ -32,7 +32,7 @@ class Modal {
         exitModalButton.classList = 'exit'
         exitModalButton.addEventListener('click', Modal.closeModal);
         exitModalButton.textContent = 'X'
-
+        window.addEventListener('click', ()=>Modal.closeModal)
         if (type == 'toDo') {
             console.log(this)
             window.addEventListener('keypress', function (e) {
@@ -53,7 +53,7 @@ class Modal {
             })
             let dueDateInput = document.createElement('input');
             dueDateInput.className = 'dueDateInput'
-            dueDateInput.placeholder = 'mm/dd/yyyy'
+            dueDateInput.placeholder = 'yyyy-mm-dd'
             let dueDateTitle = document.createElement('p')
             dueDateTitle.textContent = 'Due date'
             
@@ -93,6 +93,7 @@ class Modal {
                 alphabetical.addEventListener('click', (e)=>{
 
                     console.log("alphabetical")
+                    Modal.sortListAlphabetically(list)
                     Modal.closeModal()
                     e.stopPropagation()
                 })
@@ -114,7 +115,7 @@ class Modal {
 
                 let sortButton = document.querySelector('.sortButton');
                 let html = document.querySelector('html')
-                html.appendChild(container)
+                sortButton.appendChild(container)
             }
         }
 
@@ -167,7 +168,7 @@ class Modal {
         }
     }
 
-    sortListAlphabetically(list) {
+    static sortListAlphabetically(list) {
         let objectos = document.getElementsByClassName('ToDoItems')
         console.log(list.list.sort((a, b) => a.title > b.title ? 1 : -1))
         let display = new Display()

@@ -217,25 +217,29 @@ li {
 transition: width .3s, background-color .3s, font-size 1s, transform 2s;
 color: black;
 background-color: rgb(210, 210, 210);
-width: 40%;
+width: 100%;
 }
 .sortDropdown div:hover{
-  width: 42%;
+  width: 101%;
   background-color: #8d9091;
   cursor: default;
-  font-size: 1.1rem;
+  font-size: 2rem;
 }
 
 .sortDropdown{
 
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 101%;
   justify-content: center;
   align-items: center;
   text-align: center;
+  border-radius: 4px;
 }
-
+.headerContainer{
+  display: flex;
+  justify-content: center;
+}
 .dueDate{
 
   display: inline-block;

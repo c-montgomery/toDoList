@@ -4,7 +4,17 @@ import { Modal } from './Modal';
 import { Display, list } from './Display';
 
 const addItem = document.createElement('button');
+const headerContainer = document.createElement('div')
+headerContainer.className = 'headerContainer'
 const html = document.querySelector('html');
+
+const sortButton = document.createElement('button')
+sortButton.textContent = 'sort'
+sortButton.className = 'sortButton'
+sortButton.addEventListener('click', ()=> {
+  const modal = new Modal('sortDropdown')
+  modal.make('sortDropdown')
+})
 
 //Create basic UI
 
@@ -12,27 +22,11 @@ addItem.textContent = '+';
 addItem.addEventListener('click', () => {
   const modal = new Modal('toDo');
   modal.make('toDo');
-  const sortButton = document.createElement('button');
-  if (!document.querySelector('.sortButton')){
-    html.appendChild(sortButton)
-  }
-  sortButton.className = 'sortButton'
-  sortButton.textContent = 'sort'
-  sortButton.addEventListener('click', ()=> {
-    console.log('sort button PRESSEED!')
-    modal.make('sortDropdown')
-    modal.sortListAlphabetically(list)
-  })
+  
   
 
-  });
+});
 
-html.appendChild(addItem);
-
-
-function logSortedList(){
-  let objectos = document.getElementsByClassName('ToDoItems')
-  console.log(list.list.sort((a, b)=>a.title>b.title ? 1: -1))
-  let display = new Display()
-  display.refresh()
-}
+html.appendChild(headerContainer);
+headerContainer.appendChild(addItem);
+headerContainer.appendChild(sortButton);
