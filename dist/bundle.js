@@ -1100,7 +1100,11 @@ class Display {
           object.subtaskArray.forEach(subtask => {
             const para = document.createElement('li');
             para.textContent = subtask.title;
-            const todo = document.querySelector(`.${e.target.parentNode.className}`);
+            console.log(e.target.parentNode.className)
+            let spaceReplacer = e.target.parentNode.className.replace(' ','.')
+            console.log(spaceReplacer)
+            const todo = document.querySelector(`.${spaceReplacer}`);
+            console.log(todo)
             todo.appendChild(para);
             e.target.innerText = 'Hide Tasks';
           });
