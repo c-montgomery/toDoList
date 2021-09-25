@@ -135,11 +135,17 @@ class Modal {
     static saveModal() {
 
         let input = document.querySelector('input').value;
-        console.log(input)
         let newItem = new ToDoItems();
         newItem.title = input;
         let dueDateInput = document.querySelector('.dueDateInput').value;
         newItem.dueDate = dueDateInput
+        let priority = document.querySelectorAll('.buttonHolder button')
+        priority.forEach((obj)=>{
+            if(obj.className == 'green'){
+                newItem.priority = obj.innerHTML
+                console.log(newItem.priority)
+            }
+        })
         let display = new Display()
         display.addtoList(newItem)
         display.refresh()

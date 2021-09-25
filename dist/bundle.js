@@ -1284,11 +1284,17 @@ class Modal {
     static saveModal() {
 
         let input = document.querySelector('input').value;
-        console.log(input)
         let newItem = new _ToDoClasses__WEBPACK_IMPORTED_MODULE_0__.ToDoItems();
         newItem.title = input;
         let dueDateInput = document.querySelector('.dueDateInput').value;
         newItem.dueDate = dueDateInput
+        let priority = document.querySelectorAll('.buttonHolder button')
+        priority.forEach((obj)=>{
+            if(obj.className == 'green'){
+                newItem.priority = obj.innerHTML
+                console.log(newItem.priority)
+            }
+        })
         let display = new _Display__WEBPACK_IMPORTED_MODULE_1__.Display()
         display.addtoList(newItem)
         display.refresh()
