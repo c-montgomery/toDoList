@@ -1,6 +1,6 @@
 import { Subtask, ToDoItems, ToDoList } from "./ToDoClasses"
 import { Display, list } from "./Display"
-import { compareDesc, compareAsc, parseISO } from 'date-fns'
+import { compareDesc, compareAsc, parseISO, setDayOfYear } from 'date-fns'
 
 
 class Modal {
@@ -153,6 +153,21 @@ class Modal {
         let medium = document.createElement('button')
         let high = document.createElement('button')
 
+        low.addEventListener('click',()=>{
+            low.className = 'green'
+            medium.className = 'medium'
+            high.className = 'high'
+        })
+        medium.addEventListener('click',()=>{
+            low.className = 'low'
+            medium.className = 'green'
+            high.className = 'high'
+        })
+        high.addEventListener('click',()=>{
+            low.className = 'low'
+            medium.className = 'medium'
+            high.className = 'green'
+        })
         div.textContent = 'Priority'
         low.textContent = 'low'
         medium.textContent = 'medium'
