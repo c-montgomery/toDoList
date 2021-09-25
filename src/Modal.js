@@ -31,6 +31,7 @@ class Modal {
         let exitModalButton = document.createElement('button');
         exitModalButton.classList = 'exit'
         exitModalButton.textContent = 'X'
+        exitModalButton.addEventListener('click', (e)=>Modal.closeModal())
         if (type == 'toDo') {
             console.log(this)
             window.addEventListener('keypress', function (e) {
