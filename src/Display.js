@@ -34,7 +34,9 @@ class Display {
       });
       const dueDate = document.createElement('p');
       dueDate.className = 'dueDate';
-      dueDate.textContent = 'Due: ' + obj.dueDate;
+      if (obj.dueDate){
+        dueDate.textContent = 'Due: ' + obj.dueDate;
+      }
       const deleteButton = document.createElement('button');
       deleteButton.textContent = 'Delete';
       deleteButton.addEventListener('click', (e)=> this.deleteObject(e))

@@ -1,6 +1,7 @@
 import { Subtask, ToDoItems, ToDoList } from "./ToDoClasses"
 import { Display, list } from "./Display"
 import { compareDesc, compareAsc, parseISO, setDayOfYear } from 'date-fns'
+import { orderBy } from "lodash"
 
 
 class Modal {
@@ -100,6 +101,7 @@ class Modal {
                     e.stopPropagation()
                 })
                 dueDate.addEventListener('click', (e)=>{
+                    console.log('dudate CLICKED')
                     Modal.sortListByDueDate(list)
                     Modal.closeModal()
                     e.stopPropagation()
@@ -221,9 +223,22 @@ class Modal {
         display.refresh()
     }
     static sortListByDueDate(list){
-        console.log(list.list.sort((a,b)=>compareDesc(parseISO(a.dueDate),parseISO(b.dueDate))))
+        
+        console.log('sorlistdudate FIRED')
+        list.list.sort((a,b)=>{
+            console.log('insort function')
+            console.log(a.dueDate)
+            console.log(b.dueDate)
+            if(a.dueDate==''){
+                console.log('in sort IF STATEMENT')
+                return 1
+            }
+        return compareDesc(parseISO(a.dueDate),parseISO(b.dueDate))
+        
+        })
         let display = new Display()
         display.refresh()
+   
     }
 }
 
