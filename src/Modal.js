@@ -107,7 +107,7 @@ class Modal {
                     e.stopPropagation()
                 })
                 priority.addEventListener('click', (e)=>{
-
+                    Modal.sortListByPriority(list)
                     console.log('priotityfired')
                     Modal.closeModal()
                     e.stopPropagation()
@@ -144,7 +144,13 @@ class Modal {
         let priority = document.querySelectorAll('.buttonHolder button')
         priority.forEach((obj)=>{
             if(obj.className == 'green'){
-                newItem.priority = obj.innerHTML
+                if (obj.innerHTML == 'high'){
+                    newItem.priority = 1
+                } else if (obj.innerHTML == 'medium'){
+                    newItem.priority = 2
+                } else{
+                    newItem.priority = 3
+                }
                 console.log(newItem.priority)
             }
         })
@@ -222,15 +228,18 @@ class Modal {
         let display = new Display()
         display.refresh()
     }
+    static sortListByPriority(list){
+        
+        list.replace = orderBy(list.list, 'priority')
+        
+        let display = new Display()
+        display.refresh()
+    }
     static sortListByDueDate(list){
         
         console.log('sorlistdudate FIRED')
         list.list.sort((a,b)=>{
-            console.log('insort function')
-            console.log(a.dueDate)
-            console.log(b.dueDate)
             if(a.dueDate==''){
-                console.log('in sort IF STATEMENT')
                 return 1
             }
         return compareDesc(parseISO(a.dueDate),parseISO(b.dueDate))

@@ -24,7 +24,13 @@ class ToDoItems{
     }
     get dueDate(){
         return this._dueDate;
+    }
+    set priority(level){
+        this._priority = level;
     }  
+    get priority(){
+        return this._priority;
+    }
 }
 
 class Subtask{
@@ -51,6 +57,9 @@ class ToDoList{
     }
     static getAll(instances){
         return this._list
+    }
+    set replace(newList){
+        this._list = newList
     }
     find(title){
         for (const element of this._list){

@@ -18489,7 +18489,7 @@ class Modal {
                     e.stopPropagation()
                 })
                 priority.addEventListener('click', (e)=>{
-
+                    Modal.sortListByPriority(_Display__WEBPACK_IMPORTED_MODULE_1__.list)
                     console.log('priotityfired')
                     Modal.closeModal()
                     e.stopPropagation()
@@ -18526,7 +18526,13 @@ class Modal {
         let priority = document.querySelectorAll('.buttonHolder button')
         priority.forEach((obj)=>{
             if(obj.className == 'green'){
-                newItem.priority = obj.innerHTML
+                if (obj.innerHTML == 'high'){
+                    newItem.priority = 1
+                } else if (obj.innerHTML == 'medium'){
+                    newItem.priority = 2
+                } else{
+                    newItem.priority = 3
+                }
                 console.log(newItem.priority)
             }
         })
@@ -18604,15 +18610,18 @@ class Modal {
         let display = new _Display__WEBPACK_IMPORTED_MODULE_1__.Display()
         display.refresh()
     }
+    static sortListByPriority(list){
+        
+        list.replace = (0,lodash__WEBPACK_IMPORTED_MODULE_2__.orderBy)(list.list, 'priority')
+        
+        let display = new _Display__WEBPACK_IMPORTED_MODULE_1__.Display()
+        display.refresh()
+    }
     static sortListByDueDate(list){
         
         console.log('sorlistdudate FIRED')
         list.list.sort((a,b)=>{
-            console.log('insort function')
-            console.log(a.dueDate)
-            console.log(b.dueDate)
             if(a.dueDate==''){
-                console.log('in sort IF STATEMENT')
                 return 1
             }
         return (0,date_fns__WEBPACK_IMPORTED_MODULE_3__.default)((0,date_fns__WEBPACK_IMPORTED_MODULE_4__.default)(a.dueDate),(0,date_fns__WEBPACK_IMPORTED_MODULE_4__.default)(b.dueDate))
@@ -18667,7 +18676,13 @@ class ToDoItems{
     }
     get dueDate(){
         return this._dueDate;
+    }
+    set priority(level){
+        this._priority = level;
     }  
+    get priority(){
+        return this._priority;
+    }
 }
 
 class Subtask{
@@ -18694,6 +18709,9 @@ class ToDoList{
     }
     static getAll(instances){
         return this._list
+    }
+    set replace(newList){
+        this._list = newList
     }
     find(title){
         for (const element of this._list){
