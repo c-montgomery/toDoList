@@ -42,10 +42,10 @@ html{
   color: black;
   background: rgb(162, 162, 162);
   height: 100%;
-}
-html{
   text-align: right;
 }
+
+
 .content{
   display: inline-block;
   width: 100%;
@@ -53,8 +53,9 @@ html{
   justify-content: space-around;
   background-color: rgba(0, 0, 0, .2);
 }
-
-
+.headerContainer{
+  background-color: #292929;
+}
 button{
   font-size: 30px;
   color:rgb(91, 104, 103);
@@ -66,7 +67,7 @@ button{
   transition: transform .3s;
   height: 40px;
   padding:0px 2px 0px 2px;
-
+  background-color: rgb(201, 201, 201);
 
 }
 button:hover{
