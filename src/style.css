@@ -40,15 +40,7 @@ html{
   flex-direction: column;
   font-family: 'Average Sans';
   color: black;
-  background: rgb(91, 104, 103);
-
-  background: linear-gradient(30deg, rgb(105, 121, 120) 0%, hsla(239, 27%, 40%, 0.4) 100%);
-
-  background: -moz-linear-gradient(30deg, rgb(110, 126, 124) 0%, hsla(239, 27%, 40%, 0.4) 100%);
-
-  background: -webkit-linear-gradient(30deg, rgb(122, 141, 139) 0%, hsla(239, 27%, 40%, 0.4) 100%);
-
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#23E8D8", endColorstr="#4A4B82", GradientType=1 );
+  background: rgb(162, 162, 162);
   height: 100%;
 }
 html{
@@ -68,29 +60,33 @@ button{
   color:rgb(91, 104, 103);
   transform: scale(.98);
   border: none;
-  box-shadow: inset 0px 3px 3px #686C6D;
   z-index: 1;
-  border-radius: 3px;
-  margin: 5px;
+  border-radius: 1px;
+  margin: 3px;
   transition: transform .3s;
   height: 40px;
-  padding: 1px;
+  padding:0px 2px 0px 2px;
 
 
 }
 button:hover{
+
   color: black;
-  transform: scale(.99);
+  transform: scale(1.0);
   border: none;
   box-shadow: inset 1px 1px 13px #7db7ce;
-  box-shadow: 10px 5px 5px rgb(92, 91, 91);
+  box-shadow: 2px 2px 2px rgba(92, 91, 91,.3);
   z-index: 21;
-  border-radius: 5px;
-  margin: 5px;
-  transition: transform .3s;
+  border-radius: 2px;
+  
+  transition: transform .8s;
+  text-align: center;
+ 
 }
 
 button:active{
+
+  box-shadow: inset 0px 3px 5px 0px #787878;
   color: white;
 }
 .modal {
@@ -100,13 +96,13 @@ button:active{
   animation: fadeIn linear .5s;
   transition:  0.92s;
   position: absolute;
-  margin: 30vh 30%;
-  width: 60vh;
-  height: 60vh;
+  margin: 40px;
+  width: auto;
+  height: 80%;
   border: 1px rgb(108, 160, 228) solid;
   padding: 10px;
   border-radius: 6px;
-  background-color: rgba(251, 255, 255, 0.7);
+  background-color: rgba(235, 235, 235, 0.9);
 }
 
 div.addTasksModal{

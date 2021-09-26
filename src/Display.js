@@ -68,8 +68,8 @@ class Display {
           object.subtaskArray.forEach(subtask => {
             const para = document.createElement('li');
             para.textContent = subtask.title;
-            console.log(e.target.parentNode.className)
-            let spaceReplacer = e.target.parentNode.className.replace(' ','.')
+            const regex = /\s/g
+            let spaceReplacer = e.target.parentNode.className.replace(regex,' .')
             console.log(spaceReplacer)
             const todo = document.querySelector(`.${spaceReplacer}`);
             console.log(todo)
@@ -79,6 +79,7 @@ class Display {
         }
       });
     } else {
+      console.log('IN ELSE')
       const deletingListItems = document.querySelectorAll(`.${e.target.parentNode.className} li`);
       deletingListItems.forEach(element => element.remove());
       e.target.innerText = 'Show Tasks';
