@@ -16,7 +16,7 @@ class Display {
     paragraphs.forEach(paragraph => paragraph.remove());
     
     list.list.forEach(obj => {
-      const priority = new Image(30,30)
+      const priority = new Image(15,15)
       if (obj.priority == 3){
         priority.src = green;
       } else if(obj.priority == 2){
