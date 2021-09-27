@@ -1,15 +1,33 @@
 import { Modal } from './Modal';
 import { Subtask, ToDoItems, ToDoList } from './ToDoClasses';
+import green from './traffic-light-green.svg'
+import yellow from './traffic-light-yellow.svg'
+import red from './traffic-light-red.svg'
+import uncolored from './traffic-light.svg'
+
 const list = new ToDoList();
 class Display {
   constructor() {
   }
   //remove existing elements, and new elements from list
   refresh() {
+    
     const paragraphs = document.querySelectorAll('p');
     paragraphs.forEach(paragraph => paragraph.remove());
-
+    
     list.list.forEach(obj => {
+      const priority = new Image(30,30)
+      if (obj.priority == 3){
+        priority.src = green;
+      } else if(obj.priority == 2){
+        priority.src = yellow
+      } else if(obj.priority == 1){
+        priority.src = red
+      }else {
+        priority.src = uncolored
+      }
+
+      
       const para = document.createElement('p');
       para.textContent = obj.title;
       para.className = obj.title;
@@ -44,6 +62,9 @@ class Display {
       para.appendChild(showTasksButton);
       para.appendChild(deleteButton);
       para.appendChild(dueDate)
+      para.appendChild(priority)
+      
+
     });
   }
     

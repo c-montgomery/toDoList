@@ -57,7 +57,7 @@ html{
   background-color: #292929;
 }
 button{
-  font-size: 30px;
+  font-size: 15px;
   color:rgb(91, 104, 103);
   transform: scale(.98);
   border: none;
@@ -248,4 +248,8 @@ width: 100%;
 .green{
   background-color: green;
   color: white;
+}
+
+img{
+  padding-top: 20px;
 }
