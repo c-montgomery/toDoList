@@ -118,7 +118,6 @@ class Modal {
                 container.appendChild(priority)
 
                 let sortButton = document.querySelector('.sortButton');
-                let html = document.querySelector('html')
                 sortButton.appendChild(container)
             }else{
                 const dropdown = document.querySelector('.sortDropdown')

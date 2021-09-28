@@ -62,7 +62,7 @@ button{
   transform: scale(.98);
   border: none;
   z-index: 1;
-  border-radius: 1px;
+  border-radius: 2px;
   margin: 3px 3px 6px;
   transition: transform .3s;
   
@@ -78,7 +78,7 @@ button:hover{
   box-shadow: inset 1px 1px 13px #7db7ce;
   box-shadow: 2px 2px 2px rgba(92, 91, 91,.3);
   z-index: 21;
-  border-radius: 2px;
+  border-radius: 0px;
   transition: transform .3s;
   text-align: center;
  

@@ -19,6 +19,14 @@ class ToDoItems{
     get subtaskArray(){
         return this._subtaskArray;
     }
+
+    static removeSubtask(list, task, parent){
+        let taskParent = list.find(parent)
+        let index = taskParent.indexOf(task);
+        taskParent.splice(index,1)
+        
+    }
+
     set dueDate(date){
         this._dueDate = date;
     }
@@ -62,16 +70,15 @@ class ToDoList{
         this._list = newList
     }
     find(title){
+        console.log(this)
         for (const element of this._list){
             if (element.title = title ){
                 let array =element.subtaskArray
-                console.log(array)
                 return array
             }
         }
     }
     removeObject(deleted){
-        console.log('this is deleted:' + deleted)
         for (const obj of this._list){
             if (obj.title == deleted){
                 console.log(obj.title)

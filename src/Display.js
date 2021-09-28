@@ -67,7 +67,7 @@ class Display {
 
     });
   }
-    
+  //
   addtoList(object) {
     list.list = object;
   }
@@ -76,7 +76,6 @@ class Display {
     list.list.forEach(object => {
       if (object.title == parent) {
         object.subtaskArray = subtask;
-        console.log('saved subtask ' + subtask.title);
       }
     });
   }
@@ -85,15 +84,20 @@ class Display {
     if (e.target.innerText == 'Show Tasks') {
       list.list.forEach(object => {
         if (object.title == e.target.parentNode.className) {
-          console.log('in if');
           object.subtaskArray.forEach(subtask => {
             const para = document.createElement('li');
             para.textContent = subtask.title;
+            const button = document.createElement('button');
+            button.textContent = 'Delete'
+            button.addEventListener('click', (e)=>{
+              ToDoItems.removeSubtask(list, e.target.parentElement.firstChild.data, e.target.parentNode.parentElement.firstChild.data)
+              let display =new Display()
+              display.refresh();
+            })
             const regex = /\s/g
-            let spaceReplacer = e.target.parentNode.className.replace(regex,' .')
-            console.log(spaceReplacer)
+            let spaceReplacer = e.target.parentNode.className.replace(regex,'.')
             const todo = document.querySelector(`.${spaceReplacer}`);
-            console.log(todo)
+            para.appendChild(button)
             todo.appendChild(para);
             e.target.innerText = 'Hide Tasks';
           });
