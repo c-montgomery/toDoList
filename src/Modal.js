@@ -141,7 +141,7 @@ class Modal {
     }
     static saveModal() {
 
-        let input = document.querySelector('input').value;
+        let input = document.querySelector('.taskModalInput').value;
         let newItem = new ToDoItems();
         newItem.title = input;
         let dueDateInput = document.querySelector('.dueDateInput').value;
