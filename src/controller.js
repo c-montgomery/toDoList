@@ -2,11 +2,15 @@ import './style.css';
 import { ToDoItems, Subtasks, ToDoList } from './ToDoClasses';
 import { Modal } from './Modal';
 import { Display, list } from './Display';
+import './flatpickr.css'
+import flatpickr from 'flatpickr'
 
 const addItem = document.createElement('button');
 const headerContainer = document.createElement('div')
 headerContainer.className = 'headerContainer'
 const html = document.querySelector('html');
+
+
 
 const sortButton = document.createElement('button')
 sortButton.textContent = 'sort'

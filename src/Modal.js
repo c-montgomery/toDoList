@@ -1,8 +1,9 @@
 import { Subtask, ToDoItems, ToDoList } from "./ToDoClasses"
 import { Display, list } from "./Display"
-import { compareDesc, compareAsc, parseISO, setDayOfYear } from 'date-fns'
-import { orderBy } from "lodash"
-
+import { compareDesc, parseISO, } from 'date-fns'
+import { orderBy} from "lodash"
+import './flatpickr.css'
+import flatpickr from 'flatpickr'
 
 class Modal {
 
@@ -28,7 +29,6 @@ class Modal {
         let modalInput = document.createElement('input');
         modalInput.className = 'taskModalInput';
         modalInput.placeholder = 'Task to be added';
-
         let exitModalButton = document.createElement('button');
         exitModalButton.classList = 'exit'
         exitModalButton.textContent = 'X'
@@ -57,13 +57,16 @@ class Modal {
             let dueDateTitle = document.createElement('p')
             dueDateTitle.textContent = 'Due date';
 
+
             let priorityPicker = Modal.priorityPicker()
             
-           
             modal.appendChild(exitModalButton);
             modal.appendChild(modalInput);
             modal.appendChild(dueDateTitle);
             modal.appendChild(dueDateInput);
+
+            const flat = new flatpickr(dueDateInput, {})
+
             modal.appendChild(priorityPicker)
             modal.appendChild(saveModalButton);
             let body = document.querySelector('body');

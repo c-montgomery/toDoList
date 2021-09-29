@@ -47,7 +47,6 @@ class Display {
       const showTasksButton = document.createElement('button');
       showTasksButton.textContent = 'Show Tasks';
       showTasksButton.addEventListener('click', (e) => {
-        console.log(e);
         this.toggleShowTaskButtonState(e);
       });
       const dueDate = document.createElement('p');
@@ -104,7 +103,6 @@ class Display {
         }
       });
     } else {
-      console.log('IN ELSE')
       const deletingListItems = document.querySelectorAll(`.${e.target.parentNode.className} li`);
       deletingListItems.forEach(element => element.remove());
       e.target.innerText = 'Show Tasks';
@@ -118,7 +116,6 @@ class Display {
 
   isDigit(string){
     let checkedInput = /[0-9]/;
-    console.log('heres the value: ' + checkedInput.test(string))
     return checkedInput.test(string[0])
   }
 }
