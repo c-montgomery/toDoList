@@ -21071,8 +21071,11 @@ class Display {
   }
 
   isDigit(string){
-    let checkedInput = /[0-9]/;
-    return checkedInput.test(string[0])
+    let checkedInput = /^[0-9]/;
+    console.log(checkedInput)
+    console.log(/^[0-9]/.test(string))
+    console.log('CHECKED STRING666^^^^^^^6')
+    return checkedInput.test(string)
   }
 }
 
@@ -21306,24 +21309,25 @@ class Modal {
 
     }
     saveSubtask(parent) {
-        let input = document.querySelector('input').value;
+        let subtaskInput = document.querySelector('.taskModalInput').value;
         let newSubtask = new _ToDoClasses__WEBPACK_IMPORTED_MODULE_0__.Subtask();
         let modal = new Modal('Subtask')
         let display = new _Display__WEBPACK_IMPORTED_MODULE_1__.Display()
         let taskModalInput = document.querySelector('.taskModalInput');
         let window = document.querySelector('.modal')
-        if (!display.isDigit(input)) {
+     
+        if (!display.isDigit(subtaskInput)) {
             console.log('sidplayisTRUE')
-            newSubtask.title = input;
+            newSubtask.title = subtaskInput;
             display.addSubtaskToObject(newSubtask, parent)
             Modal.closeModal()
         } else {
-            console.log('in elsestatement')
+            console.log('isdigit?' + display.isDigit(subtaskInput))
+            console.log(subtaskInput)
             let warning = document.createElement('p');
             warning.className = 'warning';
             warning.textContent = 'Warning: Title must start with a letter!'
-            console.log(warning)
-            console.log(taskModalInput)
+            
             window.appendChild(warning)
         }
     }
@@ -21343,7 +21347,6 @@ class Modal {
     }
     static sortListByDueDate(list){
         
-        console.log('sorlistdudate FIRED')
         list.list.sort((a,b)=>{
             if(a.dueDate==''){
                 return 1

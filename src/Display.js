@@ -115,8 +115,11 @@ class Display {
   }
 
   isDigit(string){
-    let checkedInput = /[0-9]/;
-    return checkedInput.test(string[0])
+    let checkedInput = /^[0-9]/;
+    console.log(checkedInput)
+    console.log(/^[0-9]/.test(string))
+    console.log('CHECKED STRING666^^^^^^^6')
+    return checkedInput.test(string)
   }
 }
 
