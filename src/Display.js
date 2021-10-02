@@ -13,8 +13,11 @@ class Display {
   refresh() {
     
     const paragraphs = document.querySelectorAll('p');
-    paragraphs.forEach(paragraph => paragraph.remove());
-    
+    paragraphs.forEach(paragraph => {
+      if(paragraph.innerHTML !== 'Todookie®'){
+      paragraph.remove();
+      }
+    })
     list.list.forEach(obj => {
       const priority = new Image(15,15)
       if (obj.priority == 3){

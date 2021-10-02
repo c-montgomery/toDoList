@@ -263,6 +263,10 @@ img{
 .logoText{
   display: inline;
   color: rgb(162,162,162);
-  font-size: 1.2rem;
+  font-size: 1.7rem;
   padding-left: 5px;
+}
+.buttonHolder{
+  display: flex;
+  align-items: center;
 }

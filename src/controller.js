@@ -7,7 +7,8 @@ import icon from './done.svg'
 //create header
 const logoHolder = document.createElement('div');
 logoHolder.className = 'logoholder'
-
+const buttonHolder = document.createElement('div');
+buttonHolder.className = 'buttonHolder'
 const logo = new Image(20,20)
 logo.className = 'logo'
 logo.src = icon
@@ -45,5 +46,6 @@ addItem.addEventListener('click', () => {
 
 html.appendChild(headerContainer);
 headerContainer.appendChild(logoHolder)
-headerContainer.appendChild(sortButton);
-headerContainer.appendChild(addItem);
+headerContainer.appendChild(buttonHolder)
+buttonHolder.appendChild(addItem);
+buttonHolder.appendChild(sortButton);
