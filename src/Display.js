@@ -43,8 +43,7 @@ class Display {
         const input = document.querySelector("input");
         const subtask = new Subtask();
         subtask.title = input.value;
-        let tempdisplay = new Display();
-        tempdisplay.refresh()
+        
       });
       const showTasksButton = document.createElement("button");
       showTasksButton.textContent = "Show Tasks";
@@ -72,6 +71,7 @@ class Display {
           let subtaskDeleteButton = document.createElement('button')
           subtaskDeleteButton.textContent = 'delete'
           subtaskDeleteButton.addEventListener('click', (e)=>{
+            console.log(e)
             ToDoItems.removeSubtask(list,e.target.parentElement.firstChild.data, e.target.parentElement.parentNode.firstChild.data)
             let tempdisplay = new Display();
             tempdisplay.refresh()
@@ -100,7 +100,7 @@ class Display {
   toggleShowTaskButtonState(e){
     list.list.forEach((object)=>{
    
-      if (e.target.parentNode.className == object.title){
+      if (e.target.parentNode.firstChild.data == object.title){
           object.subtasksHiddenToggle()
           console.log(object)
           console.log(object.subtasksHidden+ 'object.subtasksHidden')
@@ -111,7 +111,7 @@ class Display {
   } 
 
   deleteObject(e) {
-    list.removeObject(e.target.parentNode.className);
+    list.removeObject(e.target.parentNode.firstChild.data);
     this.refresh();
   }
 

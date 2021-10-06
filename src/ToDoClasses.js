@@ -34,9 +34,13 @@ class ToDoItems {
   }
 
   static removeSubtask(list, task, parent) {
+    console.log('remove SUBTASKvvv')
+    console.log(parent)
+    console.log(task)
+    console.log('1parent2.task')
     let taskParent = list.find(parent);
     let index = taskParent.indexOf(task);
-    taskParent.splice(index, 1);
+    taskParent.splice(index-1, 1);
   }
 
   set dueDate(date) {
