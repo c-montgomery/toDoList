@@ -210,6 +210,9 @@ class Modal {
   }
 
   static sortListAlphabetically(list) {
+    console.log(list.list + 'HeRER')
+    list.list.sort((a,b)=>a.title>b.title ? 1:-1)
+    console.log(list.list)
     let objectos = document.getElementsByClassName("ToDoItems");
     let display = new Display();
     display.refresh();
