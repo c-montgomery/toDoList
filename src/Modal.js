@@ -194,19 +194,20 @@ class Modal {
     let display = new Display();
     let taskModalInput = document.querySelector(".taskModalInput");
     let window = document.querySelector(".modal");
-
+    
     if (!display.isDigit(subtaskInput)) {
+      console.log('inif')
       newSubtask.title = subtaskInput;
       display.addSubtaskToObject(newSubtask, parent);
       Modal.closeModal();
     } else {
+      console.log('inelse')
       let warning = document.createElement("p");
       warning.className = "warning";
       warning.textContent = "Warning: Title must start with a letter!";
 
       window.appendChild(warning);
     }
-    display.refresh()
   }
 
   static sortListAlphabetically(list) {
