@@ -48,7 +48,10 @@ html {
   height: 100%;
   text-align: right;
 }
-
+body{
+  display: flex;
+  
+}
 .content {
   display: inline-block;
   width: 100%;
@@ -95,8 +98,8 @@ button:active {
   animation: fadeIn linear 0.5s;
   transition: 0.92s;
   position: absolute;
-  margin: 40px;
-  width: auto;
+  margin: 10% 20% auto;
+  width: 40%;
   height: 80%;
   border: 1px rgb(108, 160, 228) solid;
   padding: 10px;
@@ -134,7 +137,6 @@ html > p {
   margin: 1px;
 }
 input {
-  display: block;
   width: 50vh;
   margin-bottom: 5px;
   margin-left: 5px;
