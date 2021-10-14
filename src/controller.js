@@ -3,6 +3,7 @@ import { ToDoItems, Subtasks, ToDoList } from "./ToDoClasses";
 import { Modal } from "./Modal";
 import { Display, list } from "./Display";
 import icon from "./done.svg";
+import { add } from "lodash";
 
 //create header
 const logoHolder = document.createElement("div");
@@ -20,6 +21,7 @@ logoText.textContent = "Todookie®";
 logoHolder.appendChild(logoText);
 
 const addItem = document.createElement("button");
+addItem.className = 'addItemButton'
 const headerContainer = document.createElement("div");
 headerContainer.className = "headerContainer";
 const html = document.querySelector("html");
@@ -36,8 +38,11 @@ sortButton.addEventListener("click", (e) => {
 
 addItem.textContent = "+";
 addItem.addEventListener("click", () => {
-  const modal = new Modal("toDo");
-  modal.make("toDo");
+  if (!document.querySelector('.modal')){
+    const modal = new Modal("toDo");
+    modal.make("toDo");
+  }
+  
 });
 
 html.appendChild(headerContainer);

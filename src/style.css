@@ -219,16 +219,13 @@ li {
   cursor: default;
   font-size: 1rem;
 }
+.sortDropdown{
+  transition: 1s;
+  right:0px;
+  top: 25px;
+  position: absolute
+}
 
-/* .sortDropdown {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border-radius: 4px;
-} */
 .headerContainer {
   display: flex;
   justify-content: space-between;
