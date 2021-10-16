@@ -222,16 +222,17 @@ li {
   font-size: 1rem;
 }
 .sortDropdown{
-  transition: .3s;
+  transition: right .9s;
+  opacity: 100%;
   right:0px;
   top: 25px;
   position: absolute
 }
 .hidden{
-  visibility: hidden;
+  opacity: 0%;
   position: absolute;
-  right: -500px;
-  color: red;
+  right: 10px;
+  top: 500px;
 }
 
 
