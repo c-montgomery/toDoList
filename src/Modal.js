@@ -79,7 +79,7 @@ class Modal {
     } else if (type == "sortDropdown") {
       if (!document.querySelector(".sortDropdown")) {
         let container = document.createElement("div");
-        container.className = "sortDropdown";
+        container.className = "hidden";
         let alphabetical = document.createElement("div");
         alphabetical.textContent = "A-Z";
         let dueDate = document.createElement("div");
@@ -233,6 +233,17 @@ class Modal {
     });
     let display = new Display();
     display.refresh();
+  }
+  static toggleHidden(modalName){
+    const modal = document.querySelector(modalName)
+    if (!modal){
+      console.log('displayed')
+      let hidden = document.querySelector('.hidden')
+      hidden.className = 'sortDropdown'
+    } else{
+      console.log('hidden')
+      modal.className = 'hidden'
+    }
   }
 }
 

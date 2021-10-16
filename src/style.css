@@ -222,11 +222,18 @@ li {
   font-size: 1rem;
 }
 .sortDropdown{
-  transition: 1s;
+  transition: .3s;
   right:0px;
   top: 25px;
   position: absolute
 }
+.hidden{
+  visibility: hidden;
+  position: absolute;
+  right: -500px;
+  color: red;
+}
+
 
 .headerContainer {
   display: flex;

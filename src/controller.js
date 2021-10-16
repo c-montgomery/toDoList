@@ -29,13 +29,16 @@ const html = document.querySelector("html");
 const sortButton = document.createElement("button");
 sortButton.textContent = "sort";
 sortButton.className = "sortButton";
-sortButton.addEventListener("click", (e) => {
-
+sortButton.addEventListener("mouseenter", (e) => {
+  if(e.target.children.length!== 1){
   const modal = new Modal("sortDropdown");
   modal.make("sortDropdown", e);
+  }
   
 });
-
+sortButton.addEventListener('click',()=>{
+  Modal.toggleHidden('.sortDropdown')
+})
 addItem.textContent = "+";
 addItem.addEventListener("click", () => {
   if (!document.querySelector('.modal')){
