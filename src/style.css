@@ -65,7 +65,7 @@ body{
 button {
   font-size: 15px;
   color: rgb(91, 104, 103);
-  transform: scale(0.98);
+  transform: scale(0.99);
   border: none;
   z-index: 1;
   border-radius: 2px;
@@ -213,26 +213,27 @@ li {
   transition: width 0.3s, background-color 0.3s, font-size 1s, transform 2s;
   color: black;
   background-color: rgb(210, 210, 210);
+  padding: 5px;
   width: 100%;
 }
 .sortDropdown div:hover {
   width: 100%;
   background-color: #8d9091;
   cursor: default;
-  font-size: 1rem;
 }
 .sortDropdown{
   transition: right .9s;
   opacity: 100%;
   right:0px;
-  top: 25px;
-  position: absolute
+  top: 31px;
+  position: absolute;
+  border-radius: 3px;
 }
+
 .hidden{
   opacity: 0%;
   position: absolute;
   right: 10px;
-  top: 500px;
 }
 
 

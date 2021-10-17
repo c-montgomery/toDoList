@@ -43,13 +43,22 @@ class Modal {
       saveModalButton.classList = "save";
       saveModalButton.innerHTML = "save";
       saveModalButton.addEventListener("click", function (e) {
-        Modal.saveModal();
+        if(document.querySelector('.dueDateInput').value==''){
+          console.log(dueDateInput)
+          dueDateInput.style.color = 'red'
+          dueDateInput.placeholder = 'Must enter date!'
+        }else{
+          Modal.saveModal();
+        }
+        
       });
       let dueDateInput = document.createElement("input");
       dueDateInput.className = "dueDateInput";
       dueDateInput.placeholder = "yyyy-mm-dd";
       let dueDateTitle = document.createElement("p");
       dueDateTitle.textContent = "Due date";
+
+      
 
       let priorityPicker = Modal.priorityPicker();
 
@@ -132,6 +141,7 @@ class Modal {
     let newItem = new ToDoItems();
     newItem.title = input;
     let dueDateInput = document.querySelector(".dueDateInput").value;
+    
     newItem.dueDate = dueDateInput;
     let priority = document.querySelectorAll(".buttonHolder button");
     priority.forEach((obj) => {
@@ -227,8 +237,10 @@ class Modal {
   static sortListByDueDate(list) {
     list.list.sort((a, b) => {
       if (a.dueDate == "") {
-        return 1;
+        console.log('fu')
+        return;
       }
+      console.log('comparedesc')
       return compareDesc(parseISO(a.dueDate), parseISO(b.dueDate));
     });
     let display = new Display();
