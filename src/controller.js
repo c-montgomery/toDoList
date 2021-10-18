@@ -53,3 +53,15 @@ headerContainer.appendChild(logoHolder);
 headerContainer.appendChild(buttonHolder);
 buttonHolder.appendChild(addItem);
 buttonHolder.appendChild(sortButton);
+let savedList = JSON.parse(localStorage.getItem('savedList'));
+
+
+if (savedList !== null){
+  console.log('line 58')
+  if (list.list.length == 0){
+    console.log('controller if')
+    list.replace = savedList
+    let display = new Display();
+    display.refresh()
+  }
+}

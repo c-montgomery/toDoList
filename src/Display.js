@@ -5,17 +5,24 @@ import yellow from "./traffic-light-yellow.svg";
 import red from "./traffic-light-red.svg";
 import uncolored from "./traffic-light.svg";
 
-const list = new ToDoList();
+let list = new ToDoList();
 class Display {
   constructor() {}
   //remove existing elements, and display elements from list
   refresh() {
+    console.log('inrefresh')
+    console.log(list)
+    console.log(list.list)
+    localStorage.setItem('savedList', JSON.stringify(list.list))
     const paragraphs = document.querySelectorAll("p");
+    console.table(list)
+    console.table(list.list[0].title)
     paragraphs.forEach((paragraph) => {
       if (paragraph.innerHTML !== "Todookie®") {
         paragraph.remove();
       }
     });
+   
     list.list.forEach((obj) => {
       const priority = new Image(15, 15);
       if (obj.priority == 3) {
@@ -29,6 +36,10 @@ class Display {
       }
 
       const para = document.createElement("p");
+      console.log(list)
+      console.log(list.list)
+      console.log('object pri: ' + obj.priority)
+      console.log(obj + ' hey, <thatsobj thats title>>' + obj.title)
       para.textContent = obj.title;
       para.className = obj.title;
 
@@ -72,7 +83,7 @@ class Display {
           subtaskDeleteButton.textContent = 'delete'
           subtaskDeleteButton.addEventListener('click', (e)=>{
             console.log(e)
-            ToDoItems.removeSubtask(list,e.target.parentElement.firstChild.data, e.target.parentElement.parentNode.firstChild.data)
+            ToDoItems.removeSubtask(list,e.target.parentElement.firstChild.data, e.target.parentElement.pare.firstChild.data)
             let tempdisplay = new Display();
             tempdisplay.refresh()
           })
@@ -102,8 +113,6 @@ class Display {
    
       if (e.target.parentNode.firstChild.data == object.title){
           object.subtasksHiddenToggle()
-          console.log(object)
-          console.log(object.subtasksHidden+ 'object.subtasksHidden')
           let display = new Display();
           display.refresh()
         }

@@ -69,12 +69,15 @@ class ToDoList {
   constructor() {
     this._list = [];
   }
-
+  replace(newList){
+    this._list = newList
+  }
   set list(object) {
     this._list.push(object);
   }
 
-  get list() {
+  get list() { 
+    console.log('this'+ this._list)
     return this._list;
   }
   static getAll(instances) {
